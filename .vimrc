@@ -91,3 +91,11 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+" --- NERDTree ---
+"  map leader+n to toggle the tree
+map <Leader>n :NERDTreeToggle<CR>
+
+" --- Buffer switching --"
+map <C-Tab> :bnext<cr>
+map <C-S-Tab> :bprevious<cr>
+
