@@ -99,3 +99,9 @@ map <Leader>n :NERDTreeToggle<CR>
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
 
+" --- Shift+Enter in normal mode should insert a line above the current --- "
+nmap <s-cr> 0i<cr><Esc>
+
+" When vimrc is edited, reload it
+autocmd! bufwritepost .vimrc source ~/.vimrc
+
