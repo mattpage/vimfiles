@@ -102,6 +102,9 @@ map <C-S-Tab> :bprevious<cr>
 " --- Shift+Enter in normal mode should insert a line above the current --- "
 nmap <s-cr> 0i<cr><Esc>
 
+" easy way to get back to normal mode  
+inoremap jj <Esc>  
+
 " When vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
