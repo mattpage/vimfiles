@@ -105,6 +105,9 @@ nmap <s-cr> 0i<cr><Esc>
 " easy way to get back to normal mode  
 inoremap jj <Esc>  
 
+" associate html validator with html files - https://github.com/sorin-ionescu/vim-htmlvalidator
+au FileType html compiler html
+
 " When vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
