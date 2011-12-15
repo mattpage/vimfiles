@@ -57,9 +57,12 @@ set cursorline
 set modeline
 set modelines=10
 
-"Enable indent folding
-" set foldenable
-" set fdm=indent
+" Enable indent folding
+set foldenable
+set fdm=indent
+set nofoldenable
+set foldnestmax=10      
+set foldlevel=1         
 
 "Set space to toggle a fold
 " nnoremap <space> za
