@@ -98,6 +98,9 @@ inoremap <right> <nop>
 "  map leader+n to toggle the tree
 map <Leader>n :NERDTreeToggle<CR>
 
+" --- NERDCommenter ---
+" map <Leader>c :NERDCommenterToggle<CR>
+
 " --- Buffer switching --"
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
