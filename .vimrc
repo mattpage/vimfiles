@@ -109,7 +109,7 @@ map <C-S-Tab> :bprevious<cr>
 nmap <s-cr> 0i<cr><Esc>
 
 " easy way to get back to normal mode  
-inoremap jj <Esc>  
+" inoremap jj <Esc>  
 
 " associate html validator with html files - https://github.com/sorin-ionescu/vim-htmlvalidator
 au FileType html compiler html
