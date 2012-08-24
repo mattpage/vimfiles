@@ -118,6 +118,51 @@ map <C-S-Tab> :bprevious<cr>
 " --- Shift+Enter in normal mode should insert a line above the current --- "
 nmap <s-cr> 0i<cr><Esc>
 
+" --- ShowMarks ---
+if has("gui_running")
+let g:showmarks_enable=1
+else
+let g:showmarks_enable=0
+let loaded_showmarks=1
+endif
+
+let g:showmarks_include="abcdefghijklmnopqrstuvwxyz"
+let g:showmarks_hlline_lower=1
+let g:showmarks_hlline_upper=1
+let g:showmarks_hlline_other=1
+
+if has("autocmd")
+  fun! FixShowmarksColours()
+    if has('gui')
+      hi ShowMarksHLl gui=bold guifg=#a0a0e0 guibg=#2e2e2e
+      hi ShowMarksHLu gui=none guifg=#a0a0e0 guibg=#2e2e2e
+      hi ShowMarksHLo gui=none guifg=#a0a0e0 guibg=#2e2e2e
+      hi ShowMarksHLm gui=none guifg=#a0a0e0 guibg=#2e2e2e
+      hi SignColumn gui=none guifg=#f0f0f8 guibg=#2e2e2e
+    endif
+  endfun
+  if v:version >= 700
+    autocmd VimEnter,Syntax,ColorScheme * call FixShowmarksColours()
+  else
+    autocmd VimEnter,Syntax * call FixShowmarksColours()
+  endif
+endif
+
+" --- Use MarkLines in conjunction with Marks to achieve mark highlighting marks a-f
+":hi MarkHi ctermfg=magenta cterm=bold guifg=#FF00FF
+"nmap ma ma:MarkLinesOn MarkHi<cr>
+"nmap uma :delmarks a<cr>:MarkLinesOff<cr>
+"nmap mb mb:MarkLinesOn MarkHi<cr>
+"nmap umb :delmarks b<cr>:MarkLinesOff<cr>
+"nmap mc mc:MarkLinesOn MarkHi<cr>
+"nmap umc :delmarks c<cr>:MarkLinesOff<cr>
+"nmap md md:MarkLinesOn MarkHi<cr>
+"nmap umd :delmarks d<cr>:MarkLinesOff<cr>
+"nmap me me:MarkLinesOn MarkHi<cr>
+"nmap ume :delmarks e<cr>:MarkLinesOff<cr>
+"nmap mf mf:MarkLinesOn MarkHi<cr>
+"nmap umf :delmarks f<cr>:MarkLinesOff<cr>
+
 " easy way to get back to normal mode  
 " inoremap jj <Esc>  
 
