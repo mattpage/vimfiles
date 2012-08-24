@@ -148,21 +148,6 @@ if has("autocmd")
   endif
 endif
 
-" --- Use MarkLines in conjunction with Marks to achieve mark highlighting marks a-f
-":hi MarkHi ctermfg=magenta cterm=bold guifg=#FF00FF
-"nmap ma ma:MarkLinesOn MarkHi<cr>
-"nmap uma :delmarks a<cr>:MarkLinesOff<cr>
-"nmap mb mb:MarkLinesOn MarkHi<cr>
-"nmap umb :delmarks b<cr>:MarkLinesOff<cr>
-"nmap mc mc:MarkLinesOn MarkHi<cr>
-"nmap umc :delmarks c<cr>:MarkLinesOff<cr>
-"nmap md md:MarkLinesOn MarkHi<cr>
-"nmap umd :delmarks d<cr>:MarkLinesOff<cr>
-"nmap me me:MarkLinesOn MarkHi<cr>
-"nmap ume :delmarks e<cr>:MarkLinesOff<cr>
-"nmap mf mf:MarkLinesOn MarkHi<cr>
-"nmap umf :delmarks f<cr>:MarkLinesOff<cr>
-
 " easy way to get back to normal mode  
 " inoremap jj <Esc>  
 
