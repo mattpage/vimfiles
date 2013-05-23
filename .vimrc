@@ -39,7 +39,7 @@ set gdefault   " search globally by default
 " --- Tab completion ----
 set wildmenu
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules
 
 " allow switching away from modified buffers. will keep the changes to the buffer without writing them to the file
 set hidden
