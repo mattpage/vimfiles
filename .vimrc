@@ -45,9 +45,11 @@ set ignorecase " searching is not case sensitive
 set smartcase  " When 'ignorecase' and 'smartcase' are both on, if a pattern contains an uppercase letter, it is case sensitive, otherwise, it is not.
 set gdefault   " search globally by default
 
-" --- Tab completion ----
+" --- command line completion ----
+" Pressing Tab (repeatedly) will autocomplete in command mode
 set wildmenu
 set wildmode=list:longest,list:full
+"do not autocomplete the following
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules
 
 " allow switching away from modified buffers. will keep the changes to the buffer without writing them to the file
