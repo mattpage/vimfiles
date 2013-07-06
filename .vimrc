@@ -10,6 +10,15 @@ set ruler
 " turn on syntax highlighting
 syntax on
 
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+set t_Co=16
+let g:solarized_termcolors=16
+colorscheme solarized
+
 " if a given file type (perl, ruby, python, c, etc) has its own special auto-indentation rules, use them
 filetype plugin indent on
 
@@ -18,9 +27,9 @@ set encoding=utf-8
 
 " --- Whitespace stuff ---
 set nowrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 " backspace should delete over line breaks and such
@@ -77,9 +86,6 @@ let macvim_hig_shift_movement = 1
 
 " Show (partial) command in the status line
 set showcmd
-
-" Set color scheme
-colorscheme freya 
 
 " set font and increase size for readability
 set gfn=Menlo\ Regular:h14
