@@ -128,6 +128,11 @@ map <C-S-Tab> :bprevious<cr>
 " --- Shift+Enter in normal mode should insert a line above the current --- "
 nmap <s-cr> 0i<cr><Esc>
 
+" --- ctrlp ---
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+"let g:ctrlp_map = '<Leader><t>'
+"let g:ctrlp_cmd = 'CtrlT'
+
 " --- ShowMarks ---
 if has("gui_running")
 let g:showmarks_enable=1
@@ -144,11 +149,11 @@ let g:showmarks_hlline_other=1
 if has("autocmd")
   fun! FixShowmarksColours()
     if has('gui')
-      hi ShowMarksHLl gui=bold guifg=#a0a0e0 guibg=#2e2e2e
-      hi ShowMarksHLu gui=none guifg=#a0a0e0 guibg=#2e2e2e
-      hi ShowMarksHLo gui=none guifg=#a0a0e0 guibg=#2e2e2e
-      hi ShowMarksHLm gui=none guifg=#a0a0e0 guibg=#2e2e2e
-      hi SignColumn gui=none guifg=#f0f0f8 guibg=#2e2e2e
+      hi ShowMarksHLl gui=bold guifg=#a0a0e0 guibg=#dddddd
+      hi ShowMarksHLu gui=none guifg=#a0a0e0 guibg=#dddddd
+      hi ShowMarksHLo gui=none guifg=#a0a0e0 guibg=#dddddd
+      hi ShowMarksHLm gui=none guifg=#a0a0e0 guibg=#dddddd
+      hi SignColumn gui=none guifg=#f0f0f8 guibg=#dddddd
     endif
   endfun
   if v:version >= 700
