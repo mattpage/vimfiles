@@ -10,11 +10,11 @@ set ruler
 " turn on syntax highlighting
 syntax on
 
-if has('gui_running')
+" if has('gui_running')
     set background=light
-else
-    set background=dark
-endif
+"else
+"    set background=dark
+"endif
 set t_Co=16
 let g:solarized_termcolors=16
 colorscheme solarized
