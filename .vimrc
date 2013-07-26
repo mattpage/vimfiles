@@ -133,6 +133,14 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 "let g:ctrlp_map = '<Leader><t>'
 "let g:ctrlp_cmd = 'CtrlT'
 
+" --- vim-multiple-cursors ---
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-S-n>'
+let g:multi_cursor_prev_key='<C-S-p>'
+let g:multi_cursor_skip_key='<C-S-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+
 " --- ShowMarks ---
 if has("gui_running")
 let g:showmarks_enable=1
