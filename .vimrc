@@ -7,6 +7,9 @@ set number
 "  add a line / column display in the bottom right-hand section of the screen.
 set ruler
 
+" --- Pathogen ----
+execute pathogen#infect()
+
 " turn on syntax highlighting
 syntax on
 
@@ -27,9 +30,9 @@ set encoding=utf-8
 
 " --- Whitespace stuff ---
 set nowrap
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " backspace should delete over line breaks and such
@@ -78,7 +81,6 @@ set foldlevel=1
 "Set space to toggle a fold
 " nnoremap <space> za
 
-
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
@@ -101,7 +103,7 @@ let g:syntastic_echo_current_error=1
 let g:syntastic_enable_signs=1
 let g:syntastic_enable_balloons = 1
 let g:syntastic_enable_highlighting = 1
-let g:syntastic_javascript_checker="jshint"
+let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_javascript_jshint_conf="~/.jshint_config"
 
 " Disable Arrow Keys
@@ -127,19 +129,6 @@ map <C-S-Tab> :bprevious<cr>
 
 " --- Shift+Enter in normal mode should insert a line above the current --- "
 nmap <s-cr> 0i<cr><Esc>
-
-" --- ctrlp ---
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-"let g:ctrlp_map = '<Leader><t>'
-"let g:ctrlp_cmd = 'CtrlT'
-
-" --- vim-multiple-cursors ---
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key='<C-S-n>'
-let g:multi_cursor_prev_key='<C-S-p>'
-let g:multi_cursor_skip_key='<C-S-x>'
-let g:multi_cursor_quit_key='<Esc>'
-
 
 " --- ShowMarks ---
 if has("gui_running")
@@ -170,12 +159,6 @@ if has("autocmd")
     autocmd VimEnter,Syntax * call FixShowmarksColours()
   endif
 endif
-
-" easy way to get back to normal mode  
-" inoremap jj <Esc>  
-
-" associate html validator with html files - https://github.com/sorin-ionescu/vim-htmlvalidator
-au FileType html compiler html
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
