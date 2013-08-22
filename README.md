@@ -12,4 +12,5 @@ fwiw, this is what I use
 * [showmarks](https://github.com/vim-scripts/ShowMarks)
 * [supertab](https://github.com/ervandew/supertab)
 * [syntastic](https://github.com/scrooloose/syntastic)
+* [vim-sensible](https://github.com/tpope/vim-sensible)
 

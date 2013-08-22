@@ -1,14 +1,14 @@
 " This option stops vim from behaving in a strongly vi -compatible way. 
 set nocompatible
 
+" --- Pathogen ----
+execute pathogen#infect()
+
 " Show line numbers
 set number
 
 "  add a line / column display in the bottom right-hand section of the screen.
 set ruler
-
-" --- Pathogen ----
-execute pathogen#infect()
 
 " turn on syntax highlighting
 syntax on
@@ -78,9 +78,6 @@ set nofoldenable
 set foldnestmax=10      
 set foldlevel=1         
 
-"Set space to toggle a fold
-" nnoremap <space> za
-
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
@@ -119,9 +116,6 @@ let g:syntastic_javascript_jshint_conf="~/.jshint_config"
 " --- NERDTree ---
 "  map leader+n to toggle the tree
 map <Leader>n :NERDTreeToggle<CR>
-
-" --- NERDCommenter ---
-" map <Leader>c :NERDCommenterToggle<CR>
 
 " --- Buffer switching --"
 map <C-Tab> :bnext<cr>
