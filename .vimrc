@@ -1,14 +1,14 @@
 " This option stops vim from behaving in a strongly vi -compatible way. 
 set nocompatible
 
-" --- Pathogen ----
-execute pathogen#infect()
-
 " Show line numbers
 set number
 
 "  add a line / column display in the bottom right-hand section of the screen.
 set ruler
+
+" --- Pathogen ----
+execute pathogen#infect()
 
 " turn on syntax highlighting
 syntax on
@@ -78,6 +78,9 @@ set nofoldenable
 set foldnestmax=10      
 set foldlevel=1         
 
+"Set space to toggle a fold
+" nnoremap <space> za
+
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
@@ -117,6 +120,9 @@ let g:syntastic_javascript_jshint_conf="~/.jshint_config"
 "  map leader+n to toggle the tree
 map <Leader>n :NERDTreeToggle<CR>
 
+" --- NERDCommenter ---
+" map <Leader>c :NERDCommenterToggle<CR>
+
 " --- Buffer switching --"
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
@@ -152,6 +158,25 @@ if has("autocmd")
   else
     autocmd VimEnter,Syntax * call FixShowmarksColours()
   endif
+endif
+
+" highlight trailing whitespace as errors
+match ErrorMsg '\s\+$'
+
+" Removes trailing spaces
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+
+nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
+" remove trailing whitespace
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+
+if has("autocmd")
+  autocmd FileWritePre    * :call TrimWhiteSpace()
+  autocmd FileAppendPre   * :call TrimWhiteSpace()
+  autocmd FilterWritePre  * :call TrimWhiteSpace()
+  autocmd BufWritePre     * :call TrimWhiteSpace()
 endif
 
 " When vimrc is edited, reload it
