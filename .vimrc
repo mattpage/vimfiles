@@ -172,6 +172,9 @@ nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 " remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
+" unhilight on escape
+nnoremap <esc> :noh<return><esc>
+
 if has("autocmd")
   autocmd FileWritePre    * :call TrimWhiteSpace()
   autocmd FileAppendPre   * :call TrimWhiteSpace()
