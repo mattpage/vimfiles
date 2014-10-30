@@ -1,4 +1,4 @@
-" This option stops vim from behaving in a strongly vi -compatible way. 
+" This option stops vim from behaving in a strongly vi -compatible way.
 set nocompatible
 
 " Show line numbers
@@ -38,7 +38,7 @@ set expandtab
 " backspace should delete over line breaks and such
 set backspace=indent,eol,start
 
-" The command :set list displays whitespace, while :set nolist displays normally. 
+" The command :set list displays whitespace, while :set nolist displays normally.
 set nolist
 
 " --- Search related ---
@@ -63,10 +63,10 @@ set laststatus=2
 
 " lightly highlight the current line on which the cursor is placed (turn this off if it gets annoying)
 set cursorline
- 
+
 " lightly highlight the current column in which the cursor is placed (turn this off if it gets annoying)
 " set cursorcolumn
- 
+
 " tell vim to scan the file for a modeline that contains in-line vim commands and options, just for that file
 set modeline
 set modelines=10
@@ -75,8 +75,8 @@ set modelines=10
 set foldenable
 set fdm=indent
 set nofoldenable
-set foldnestmax=10      
-set foldlevel=1         
+set foldnestmax=10
+set foldlevel=1
 
 "Set space to toggle a fold
 " nnoremap <space> za
@@ -94,7 +94,7 @@ set showcmd
 " set font and increase size for readability
 set gfn=Menlo\ Regular:h14
 
-" --- Syntastic --- 
+" --- Syntastic ---
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -126,6 +126,7 @@ map <Leader>n :NERDTreeToggle<CR>
 " --- Buffer switching --"
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
+map <C-S-Q> :Bclose<cr>
 
 " --- Shift+Enter in normal mode should insert a line above the current --- "
 nmap <s-cr> 0i<cr><Esc>
