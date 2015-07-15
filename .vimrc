@@ -103,8 +103,8 @@ let g:syntastic_echo_current_error=1
 let g:syntastic_enable_signs=1
 let g:syntastic_enable_balloons = 1
 let g:syntastic_enable_highlighting = 1
-let g:syntastic_javascript_checkers = ["jshint"]
-let g:syntastic_javascript_jshint_conf="~/.jshint_config"
+let g:syntastic_javascript_checkers = ["eslint"]
+let g:syntastic_javascript_eslint_conf="~/.eslintrc"
 
 " Disable Arrow Keys
 "nnoremap <up> <nop>
@@ -198,7 +198,7 @@ augroup LargeFile
  autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
 augroup END
 
-function LargeFile()
+function! LargeFile()
  " no syntax highlighting etc
  set eventignore+=FileType
  " save memory when other file is viewed
