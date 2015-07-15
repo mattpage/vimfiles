@@ -1,7 +1,7 @@
-#My vim config stuff
+# my vim config stuff
 fwiw, this is what I use
 
-##Plugins:
+## plugins:
 * [ack.vim](https://github.com/mileszs/ack.vim)
 * [bufclose](https://github.com/rbgrouleff/bclose.vim)
 * [bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
@@ -16,3 +16,7 @@ fwiw, this is what I use
 * [vim-sensible](https://github.com/tpope/vim-sensible)
 * [vim-snippets](https://github.com/honza/vim-snippets)
 
+## requirements
+```shell
+$ npm install eslint eslint-plugin-react babel-eslint -g
+```

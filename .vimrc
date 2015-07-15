@@ -98,13 +98,14 @@ set gfn=Menlo\ Regular:h14
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+" let g:syntastic_debug = 3
 let g:syntastic_check_on_open=1
 let g:syntastic_echo_current_error=1
 let g:syntastic_enable_signs=1
 let g:syntastic_enable_balloons = 1
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_javascript_eslint_conf="~/.eslintrc"
+let g:syntastic_javascript_eslint_args = '--config ~/.eslintrc'
 
 " Disable Arrow Keys
 "nnoremap <up> <nop>
