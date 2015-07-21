@@ -30,6 +30,7 @@
  * Strict mode
  */
     // babel inserts "use strict"; for us
+    // MP - disabled so it doesn't generate errors for node --harmony
     //"strict": [2, "never"],          // http://eslint.org/docs/rules/strict
 
 /**
@@ -52,6 +53,8 @@
 /**
  * Possible errors
  */
+    //MP - Airbnb recommend this, but dangling commas seem wrong to me
+    //https://github.com/airbnb/javascript#19.2
     //"comma-dangle": [2, "always-multiline"],    // http://eslint.org/docs/rules/comma-dangle
     "no-cond-assign": [2, "always"], // http://eslint.org/docs/rules/no-cond-assign
     "no-console": 1,                 // http://eslint.org/docs/rules/no-console
@@ -153,9 +156,11 @@
     "no-new-object": 2,              // http://eslint.org/docs/rules/no-new-object
     "no-spaced-func": 2,             // http://eslint.org/docs/rules/no-spaced-func
     "no-trailing-spaces": 2,         // http://eslint.org/docs/rules/no-trailing-spaces
+    //deprecated
     //"no-wrap-func": 2,               // http://eslint.org/docs/rules/no-wrap-func
     "no-underscore-dangle": 0,       // http://eslint.org/docs/rules/no-underscore-dangle
     //"one-var": [2, "never"],         // http://eslint.org/docs/rules/one-var
+    "one-var": { const: "always" } //require one variable per const decl
     //"padded-blocks": [2, "never"],   // http://eslint.org/docs/rules/padded-blocks
     "semi": [2, "always"],           // http://eslint.org/docs/rules/semi
     "semi-spacing": [2, {            // http://eslint.org/docs/rules/semi-spacing
