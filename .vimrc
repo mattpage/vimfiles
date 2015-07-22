@@ -18,6 +18,8 @@ syntax on
 "else
 "    set background=dark
 "endif
+
+"set vim colors and color scheme
 set t_Co=16
 let g:solarized_termcolors=16
 colorscheme solarized
@@ -98,6 +100,7 @@ set gfn=Menlo\ Regular:h14
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+" enable this when debugging syntastic problems
 " let g:syntastic_debug = 3
 let g:syntastic_check_on_open=1
 let g:syntastic_echo_current_error=1
@@ -106,16 +109,6 @@ let g:syntastic_enable_balloons = 1
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_javascript_eslint_args = '--config ~/.eslintrc'
-
-" Disable Arrow Keys
-"nnoremap <up> <nop>
-"nnoremap <down> <nop>
-"nnoremap <left> <nop>
-"nnoremap <right> <nop>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"inoremap <left> <nop>
-"inoremap <right> <nop>
 
 " Use jj to leave insert mode
 inoremap jj <Esc>
