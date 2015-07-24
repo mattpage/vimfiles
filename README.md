@@ -9,12 +9,15 @@ fwiw, this is what I use
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 * [pathogen](https://github.com/tpope/vim-pathogen)
+* [python-mode](https://github.com/klen/python-mode)
 * [showmarks](https://github.com/vim-scripts/ShowMarks)
-* [snipmate](https://github.com/garbas/vim-snipmate)
 * [supertab](https://github.com/ervandew/supertab)
 * [syntastic](https://github.com/scrooloose/syntastic)
 * [vim-sensible](https://github.com/tpope/vim-sensible)
 * [vim-snippets](https://github.com/honza/vim-snippets)
+
+## also
+* [large file support](http://vim.wikia.com/wiki/Faster_loading_of_large_files)
 
 ## requirements
 ```shell
