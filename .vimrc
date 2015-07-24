@@ -11,18 +11,19 @@ set ruler
 execute pathogen#infect()
 
 " turn on syntax highlighting
-syntax on
-
-" if has('gui_running')
-    set background=light
-"else
-"    set background=dark
-"endif
+syntax enable
 
 "set vim colors and color scheme
-set t_Co=16
-let g:solarized_termcolors=16
-colorscheme solarized
+set t_Co=256
+let g:solarized_termcolors=256
+set background=light
+
+if has('gui_running')
+  colorscheme solarized
+"else
+"  set background=light
+endif
+
 
 " if a given file type (perl, ruby, python, c, etc) has its own special auto-indentation rules, use them
 filetype plugin indent on
@@ -176,6 +177,7 @@ nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 " unhilight on escape
 nnoremap <esc> :noh<return><esc>
 
+" remove trailing whitespace on file save
 if has("autocmd")
   autocmd FileWritePre    * :call TrimWhiteSpace()
   autocmd FileAppendPre   * :call TrimWhiteSpace()
