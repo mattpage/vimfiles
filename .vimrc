@@ -111,6 +111,9 @@ let g:syntastic_enable_highlighting = 1
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_javascript_eslint_args = '--config ~/.eslintrc'
 
+" --- javascript-libraries-syntax ---
+let g:used_javascript_libs = 'jquery,underscore,angularjs,backbone,chai,react'
+
 " Use jj to leave insert mode
 inoremap jj <Esc>
 

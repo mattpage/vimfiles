@@ -15,8 +15,8 @@ fwiw, this is what I use
 * [syntastic](https://github.com/scrooloose/syntastic)
 * [vim-sensible](https://github.com/tpope/vim-sensible)
 * [vim-snippets](https://github.com/honza/vim-snippets)
-* [vim-javascript-syntax](https://github.com/jelera/vim-javascript-syntax)
-* [vim-javascript](https://github.com/pangloss/vim-javascript)
+* [javascript-libraries-syntax](https://github.com/othree/javascript-libraries-syntax.vim)
+* [yajs](https://github.com/othree/yajs.vim)
 
 ## also
 * [large file support](http://vim.wikia.com/wiki/Faster_loading_of_large_files)
