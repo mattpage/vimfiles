@@ -135,6 +135,10 @@ map <C-S-Q> :Bclose<cr>
 " --- Shift+Enter in normal mode should insert a line above the current --- "
 nmap <s-cr> 0i<cr><Esc>
 
+" --- vim-json ---"
+"  turn off concealing
+let g:vim_json_syntax_conceal = 0
+
 " --- ShowMarks ---
 if has("gui_running")
 let g:showmarks_enable=1
