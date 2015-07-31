@@ -16,12 +16,12 @@ syntax enable
 "set vim colors and color scheme
 set t_Co=256
 let g:solarized_termcolors=256
-set background=light
+set background=dark
 
 if has('gui_running')
   colorscheme solarized
-"else
-"  set background=light
+else
+  set background=light
 endif
 
 

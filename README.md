@@ -14,6 +14,7 @@ fwiw, this is what I use
 * [showmarks](https://github.com/vim-scripts/ShowMarks)
 * [supertab](https://github.com/ervandew/supertab)
 * [syntastic](https://github.com/scrooloose/syntastic)
+* [vim-less](https://github.com/genoma/vim-less)
 * [vim-json](https://github.com/elzr/vim-json)
 * [vim-sensible](https://github.com/tpope/vim-sensible)
 * [vim-snippets](https://github.com/honza/vim-snippets)
