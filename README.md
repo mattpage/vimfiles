@@ -6,6 +6,7 @@ fwiw, this is what I use
 * [bufclose](https://github.com/rbgrouleff/bclose.vim)
 * [bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
 * [ctrlp](https://github.com/kien/ctrlp.vim)
+* [DrawIt](https://github.com/vim-scripts/DrawIt)
 * [javascript-libraries-syntax](https://github.com/othree/javascript-libraries-syntax.vim)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
