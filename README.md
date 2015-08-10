@@ -25,6 +25,9 @@ fwiw, this is what I use
 * [large file support](http://vim.wikia.com/wiki/Faster_loading_of_large_files)
 
 ## requirements
+A newer version of node.js (>=12.x).
+
+## installation
 for syntastic's eslint support:
 ```shell
 $ npm install eslint eslint-plugin-react babel-eslint -g
