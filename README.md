@@ -42,6 +42,6 @@ git submodule update --init --recursive
 brew install cmake
 ./install.sh
 cd ..
-cd bundle/tern_for_vim
+cd tern_for_vim
 npm install
 ```
