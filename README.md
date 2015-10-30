@@ -45,3 +45,6 @@ cd ..
 cd tern_for_vim
 npm install
 ```
+
+## post-install
+run macvim and then :Helptags 
