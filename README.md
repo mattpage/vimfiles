@@ -30,6 +30,7 @@ fwiw, this is what I use
 A newer version of node.js (>=12.x).
 
 ## installation
+```shell
 git clone https://github.com/mattpage/vimfiles.git
 cd vimfile
 cp -r .vim ~
@@ -37,6 +38,7 @@ cp .vimrc ~
 cp .ackrc ~
 cp .eslintrc ~
 cp .jshint_config ~
+```
 
 for syntastic's eslint support:
 ```shell
@@ -55,4 +57,4 @@ npm install
 ```
 
 ## post-install
-run macvim and then :Helptags 
+run macvim and then :Helptags
