@@ -32,7 +32,7 @@ A newer version of node.js (>=12.x).
 ## installation
 ```shell
 git clone https://github.com/mattpage/vimfiles.git
-cd vimfile
+cd vimfiles
 cp -r .vim ~
 cp .vimrc ~
 cp .ackrc ~
