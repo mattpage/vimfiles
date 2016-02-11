@@ -27,17 +27,20 @@ fwiw, this is what I use
 * [large file support](http://vim.wikia.com/wiki/Faster_loading_of_large_files)
 
 ## requirements
-A newer version of node.js (>=12.x).
+* A newer version of node.js (>=v4.3.0)
+* MacVim, may work with plain-ol' Vim
+* Homebrew (osx)
 
 ## installation
 ```shell
-git clone --recursive https://github.com/mattpage/vimfiles.git
+git clone https://github.com/mattpage/vimfiles.git
 cd vimfiles
 cp -r .vim ~
 cp .vimrc ~
 cp .ackrc ~
 cp .eslintrc ~
 cp .jshint_config ~
+cp .tern-config ~
 ```
 
 for syntastic's eslint support:
@@ -47,10 +50,13 @@ $ npm install eslint eslint-plugin-react babel-eslint -g
 
 for YouCompleteMe and tern_for_vim
 ```
-cd ~/.vim/bundle/YouCompleteMe
+cd ~/.vim/bundle/
+git clone https://github.com/Valloric/YouCompleteMe.git
+git clone https://github.com/ternjs/tern_for_vim.git
+cd YouCompleteMe
 git submodule update --init --recursive
 brew install cmake
-./install.sh
+./install.py --tern-completer
 cd ..
 cd tern_for_vim
 npm install

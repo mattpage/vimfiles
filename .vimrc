@@ -127,6 +127,10 @@ map <Leader>n :NERDTreeToggle<CR>
 " --- NERDCommenter ---
 " map <Leader>c :NERDCommenterToggle<CR>
 
+
+" --- YouCompleteMe ---
+map <Leader>g :YcmCompleter GoTo<CR>
+
 " --- Buffer switching --"
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
