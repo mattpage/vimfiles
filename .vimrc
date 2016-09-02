@@ -130,6 +130,9 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " --- YouCompleteMe ---
 map <Leader>g :YcmCompleter GoTo<CR>
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 
 " --- Buffer switching --"
 map <C-Tab> :bnext<cr>
