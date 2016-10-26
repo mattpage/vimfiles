@@ -84,6 +84,9 @@ set foldlevel=1
 "Set space to toggle a fold
 " nnoremap <space> za
 
+" Force vim to make backup copy and overwrite original
+set backupcopy=yes
+
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
