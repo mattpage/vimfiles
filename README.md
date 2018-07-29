@@ -1,6 +1,5 @@
 # my vim config stuff
-I've moved to using neovim, so this is not really maintained anymore.
-My neovim config is [here](https://github.com/mattpage/neovimfiles).
+Alternatively see my neovim config [here](https://github.com/mattpage/neovimfiles).
 
 ## plugins:
 * [ack.vim](https://github.com/mileszs/ack.vim)
