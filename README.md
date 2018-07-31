@@ -78,36 +78,55 @@ setxkbmap -layout us -option ctrl:nocaps
 ```
 ## key mappings
 'jj'      leave insert mode (same as esc)
+
 'v'       leave visual mode
+
 'esc+esc' no highlight
+
 '\s'      save
 
+
 'ctrl+d'  scroll down 
+
 'ctrl+e'  scroll down 1/4 page
+
 'ctrl+u'  scroll up 
+
 'ctrl+y'  scroll up 1/4 page 
 
 ### bufexplorer key mappings
 '\be'     open buffer explorer (normal)
+
 '\bs'     open buffer explorer (horiz split)
+
 '\bv'     open buffer explorer (vert split)
+
 '\bf'     buffer forward
+
 '\bb'     buffer backwards
+
 '\bc'     buffer close
+
 
 ### nerdtree key mappings
 '\n'      toggle nerdtree
 
 ### fzf key mappings
 '\ff'     fuzzy find files
+
 '\fc'     fuzzy find git commits
 
 ### ycm key mappings
 '\go'     goto definition
+
 '\fix'    fix it
+
 '\ren'    refactor rename
+
 '\format' reformat the buffer or selection
+
 '\restart' restart the semantic server
+
 '\reload' clear cache and reload all files 
 
 # resources
