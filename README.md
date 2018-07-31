@@ -1,4 +1,4 @@
-#Vim Setup
+# Vim Setup
 
 ## requirements
 * Vim 8+ with scripting support (vim-nox on debian)
@@ -26,7 +26,7 @@ git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javas
 git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx
 ```
 
-## install YouCompleteMe
+## install youcompleteme
 
 ```
 sudo npm install -g typescript
@@ -44,7 +44,7 @@ $ vim
 :Helptags 
 ```
 
-## Ale linting support
+## ale linting support
 Ale is an asynchronous linting engine.
 
 Install eslint in your local project (or globally)
@@ -70,13 +70,13 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
-## Remap Capslock
+## remap capslock
 To map capslock to ctrl, add this to .bashrc
 ```
 setxkbmap -layout us -option ctrl:nocaps
 
 ```
-## Key Mappings
+## key mappings
 'jj'      leave insert mode (same as esc)
 'v'       leave visual mode
 'esc+esc' no highlight
@@ -87,7 +87,7 @@ setxkbmap -layout us -option ctrl:nocaps
 'ctrl+u'  scroll up 
 'ctrl+y'  scroll up 1/4 page 
 
-### BufExplorer Key Mappings
+### bufexplorer key mappings
 '\be'     open buffer explorer (normal)
 '\bs'     open buffer explorer (horiz split)
 '\bv'     open buffer explorer (vert split)
@@ -95,14 +95,14 @@ setxkbmap -layout us -option ctrl:nocaps
 '\bb'     buffer backwards
 '\bc'     buffer close
 
-### NerdTree Key Mappings
+### nerdtree key mappings
 '\n'      toggle nerdtree
 
-### FZF Key Mappings
+### fzf key mappings
 '\ff'     fuzzy find files
 '\fc'     fuzzy find git commits
 
-### YCM Key Mappings
+### ycm key mappings
 '\go'     goto definition
 '\fix'    fix it
 '\ren'    refactor rename
@@ -110,15 +110,26 @@ setxkbmap -layout us -option ctrl:nocaps
 '\restart' restart the semantic server
 '\reload' clear cache and reload all files 
 
-# Resources
+# resources
 [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
+
 [nerdtree](https://github.com/scrooloose/nerdtree)
+
 [bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
+
 [bclose](https://github.com/rbgrouleff/bclose.vim)
+
 [ale](https://github.com/w0rp/ale)
+
 [fzf](https://github.com/junegunn/fzf)
+
 [fzf.vim](https://github.com/junegunn/fzf.vim)
+
 [vim-commentary](https://github.com/tpope/vim-commentary)
+
 [vim-javascript](https://github.com/pangloss/vim-javascript)
+
 [vim-jsx](https://github.com/mxw/vim-jsx)
+
 [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+
