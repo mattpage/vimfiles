@@ -1,35 +1,27 @@
+execute pathogen#infect()
+
 " This option stops vim from behaving in a strongly vi -compatible way.
 set nocompatible
-
-" Show line numbers
-set number
-
-"  add a line / column display in the bottom right-hand section of the screen.
-set ruler
-
-" --- Pathogen ----
-execute pathogen#infect()
 
 " turn on syntax highlighting
 syntax enable
 
-"set vim colors and color scheme
-set t_Co=256
-let g:solarized_termcolors=256
+" solarized colors - background=dark|light
 set background=dark
-
-if has('gui_running')
-  colorscheme solarized
-else
-  set background=light
-endif
-
+let g:solarized_termcolors=256
+colorscheme solarized
 
 " if a given file type (perl, ruby, python, c, etc) has its own special auto-indentation rules, use them
 filetype plugin indent on
 
 " Set file encoding
 set encoding=utf-8
+
+" Show line numbers
+set number
+
+"  add a line / column display in the bottom right-hand section of the screen.
+set ruler
 
 " --- Whitespace stuff ---
 set nowrap
@@ -41,7 +33,7 @@ set expandtab
 " backspace should delete over line breaks and such
 set backspace=indent,eol,start
 
-" The command :set list displays whitespace, while :set nolist displays normally.
+" Do not display whitespace (list/nolist)
 set nolist
 
 " --- Search related ---
@@ -70,6 +62,9 @@ set cursorline
 " lightly highlight the current column in which the cursor is placed (turn this off if it gets annoying)
 " set cursorcolumn
 
+" enable mouse support - sometimes handy
+set mouse=a
+
 " tell vim to scan the file for a modeline that contains in-line vim commands and options, just for that file
 set modeline
 set modelines=10
@@ -81,9 +76,6 @@ set nofoldenable
 set foldnestmax=10
 set foldlevel=1
 
-"Set space to toggle a fold
-" nnoremap <space> za
-
 " Force vim to make backup copy and overwrite original
 set backupcopy=yes
 
@@ -91,31 +83,14 @@ set backupcopy=yes
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
-" MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
+" When vimrc is edited, reload it
+autocmd! bufwritepost .vimrc source ~/.vimrc
 
 " Show (partial) command in the status line
 set showcmd
 
-" set font and increase size for readability
-set gfn=Menlo\ Regular:h14
-
-" --- Syntastic ---
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-" enable this when debugging syntastic problems
-" let g:syntastic_debug = 3
-let g:syntastic_check_on_open=1
-let g:syntastic_echo_current_error=1
-let g:syntastic_enable_signs=1
-let g:syntastic_enable_balloons = 1
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_javascript_eslint_args = '--config ~/.eslintrc'
-
-" --- javascript-libraries-syntax ---
-let g:used_javascript_libs = 'jquery,underscore,angularjs,backbone,chai,react'
+" Super easy saves
+map <leader>s :w<CR>
 
 " Use jj to leave insert mode
 inoremap jj <Esc>
@@ -123,108 +98,123 @@ inoremap jj <Esc>
 " Use v to leave insert mode while in visual mode
 vnoremap v <esc>
 
+" NOTE: single escape causes vim to start in insert mode on debian9.
+" unhilight on escape escape
+nnoremap <esc><esc> :nohl<cr>
+
+
+" Map Ctrl+Y and Ctrl+E to move Quarter page up/down respectively
+" this overrides normal view scrolling behavior, but I never use that
+function! ScrollQuarter(move)
+  let height=winheight(0)
+
+  if a:move == 'up'
+    let key="k"
+  else
+    let key="j"
+  endif
+
+  execute 'normal! ' . height/4 . key
+endfunction
+
+nnoremap <C-Y> <up> :call ScrollQuarter('up')<CR>
+nnoremap <C-E> <down> :call ScrollQuarter('down')<CR>
+
 " --- NERDTree ---
-"  map leader+n to toggle the tree
+map leader+n to toggle the tree
 map <Leader>n :NERDTreeToggle<CR>
 
-" --- NERDCommenter ---
-" map <Leader>c :NERDCommenterToggle<CR>
+" --- Buffer switching ---
+map <Leader>bf :bnext<cr>
+map <Leader>bb :bprevious<cr>
+map <Leader>bc :Bclose<cr>
 
+" --- ALE ---
+let g:ale_linters = {'javascript': ['eslint']}
+
+" :ALEFix will try and fix your JS code with ESLint.
+let g:ale_fixers = {'javascript': ['prettier-eslint', 'eslint']}
+
+" fix files automatically on save.
+let g:ale_fix_on_save = 1
+
+"--- FZF ---
+set rtp+=~/.fzf
+
+" map leader+ff to fuzzy find files
+map <Leader>ff :Files<CR>
+
+" map leader+fc to find commits
+map <Leader>fc :Commits<CR>
+
+"--- vim-commentary ---
+map <leader>c gc
+
+"--- vim-javascript ---
+" do not syntax highlight jsdocs
+let g:javascript_plugin_jsdoc = 0
+
+" --- vim-jsx ---
+" jsx extension is not required for syntax highlighting and indenting
+let g:jsx_ext_required = 0
 
 " --- YouCompleteMe ---
-map <Leader>g :YcmCompleter GoTo<CR>
+
+" GoToDefinition
+" This command tries to perform the 'most sensible' GoTo operation it can.
+" Currently, this means that it tries to look up the symbol under the cursor and
+" jumps to its definition if possible; if the definition is not accessible from
+" the current translation unit, jumps to the symbol's declaration. 
+map <Leader>go :YcmCompleter GoTo<CR>
+
+" GetType
+" Echos the type of the variable or method under the cursor, and where it
+" differs, the derived type.
+" map <Leader>type :YcmCompleter GetType<CR>
+
+" GetDoc
+"Displays the preview window populated with quick info about the identifier under
+"the cursor. 
+" map <Leader>doc :YcmCompleter GetDoc<CR>
+
+" FixIt
+" Where available, attempts to make changes to the buffer to correct diagnostics
+" on the current line. Where multiple suggestions are available (such as when
+" there are multiple ways to resolve a given warning, or where multiple
+" diagnostics are reported for the current line), the options are presented and
+" one can be selected.
+map <Leader>fix :YcmCompleter FixIt<CR>
+
+" RefactorRename
+" This command attempts to perform a semantic rename of the identifier under the
+" cursor. This includes renaming declarations, definitions and usages of the
+" identifier, or any other language-appropriate action. 
+map <Leader>ren :YcmCompleter RefactorRename<CR>
+
+" Format
+" This command formats the whole buffer or some part of it according to the
+" value of the Vim options shiftwidth and expandtab (see :h 'sw' and :h et
+" respectively). To format a specific part of your document, you can either
+" select it in one of Vim's visual modes (see :h visual-use) and run the command
+" or directly enter the range on the command line, e.g. :2,5YcmCompleter Format
+" to format it from line 2 to line 5.
+map <Leader>format :YcmCompleter Format<CR>
+
+" OrganizeImports
+" This command removes unused imports and sorts imports in the current file. 
+" map <Leader>org :YcmCompleter OrganizeImports<CR>
+
+" RestartServer
+" Restarts the semantic-engine-as-localhost-server for those semantic engines
+" that work as separate servers that YCM talks to.
+map <Leader>restart :YcmCompleter RestartServer<CR>
+
+" ReloadSolution
+" Instruct the Omnisharp server to clear its cache and reload all files from
+" disk. This is useful when files are added, removed, or renamed in the
+" solution, files are changed outside of Vim, or whenever Omnisharp cache is
+" out-of-sync.
+map <Leader>reload :YcmCompleter ReloadSolution<CR>
+
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-
-
-" --- Buffer switching --"
-map <C-Tab> :bnext<cr>
-map <C-S-Tab> :bprevious<cr>
-map <C-S-Q> :Bclose<cr>
-
-" --- Shift+Enter in normal mode should insert a line above the current --- "
-nmap <s-cr> 0i<cr><Esc>
-
-" --- CamelCaseMotions <leader>w <leader>b <leader>e --- "
-nmap <s-cr> 0i<cr><Esc>
-call camelcasemotion#CreateMotionMappings('<leader>')
-
-" --- vim-json ---"
-"  turn off concealing
-let g:vim_json_syntax_conceal = 0
-
-" --- ShowMarks ---
-if has("gui_running")
-let g:showmarks_enable=1
-else
-let g:showmarks_enable=0
-let loaded_showmarks=1
-endif
-
-let g:showmarks_include="abcdefghijklmnopqrstuvwxyz"
-let g:showmarks_hlline_lower=1
-let g:showmarks_hlline_upper=1
-let g:showmarks_hlline_other=1
-
-if has("autocmd")
-  fun! FixShowmarksColours()
-    if has('gui')
-      hi ShowMarksHLl gui=bold guifg=#a0a0e0 guibg=#dddddd
-      hi ShowMarksHLu gui=none guifg=#a0a0e0 guibg=#dddddd
-      hi ShowMarksHLo gui=none guifg=#a0a0e0 guibg=#dddddd
-      hi ShowMarksHLm gui=none guifg=#a0a0e0 guibg=#dddddd
-      hi SignColumn gui=none guifg=#f0f0f8 guibg=#dddddd
-    endif
-  endfun
-  if v:version >= 700
-    autocmd VimEnter,Syntax,ColorScheme * call FixShowmarksColours()
-  else
-    autocmd VimEnter,Syntax * call FixShowmarksColours()
-  endif
-endif
-
-" highlight trailing whitespace as errors
-match ErrorMsg '\s\+$'
-
-" Removes trailing spaces
-function! TrimWhiteSpace()
-    %s/\s\+$//e
-endfunction
-
-nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
-" remove trailing whitespace
-nnoremap <Leader>rtw :%s/\s\+$//e<CR>
-
-" unhilight on escape
-nnoremap <esc> :noh<return><esc>
-
-" remove trailing whitespace on file save
-if has("autocmd")
-  autocmd FileWritePre    * :call TrimWhiteSpace()
-  autocmd FileAppendPre   * :call TrimWhiteSpace()
-  autocmd FilterWritePre  * :call TrimWhiteSpace()
-  autocmd BufWritePre     * :call TrimWhiteSpace()
-endif
-
-" When vimrc is edited, reload it
-autocmd! bufwritepost .vimrc source ~/.vimrc
-
-" file is large from 10mb
-let g:LargeFile = 1024 * 1024 * 10
-augroup LargeFile
- autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
-augroup END
-
-function! LargeFile()
- " no syntax highlighting etc
- set eventignore+=FileType
- " save memory when other file is viewed
- setlocal bufhidden=unload
- " is read-only (write with :w new_filename)
- "setlocal buftype=nowrite
- " no undo possible
- setlocal undolevels=-1
- " display message
- autocmd VimEnter *  echo "The file is larger than " . (g:LargeFile / 1024 / 1024) . " MB, so some options are changed (see .vimrc for details)."
-endfunction
-
