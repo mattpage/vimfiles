@@ -30,8 +30,14 @@ git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx
 
 ```
 sudo npm install -g typescript
+
+#if debian
 sudo apt-get install build-essential cmake
 sudo apt-get install python-dev python3-dev
+
+#if osx
+brew install python cmake
+
 git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
 cd ~/.vim/bundle/YouCompleteMe
 git submodule update --init --recursive
