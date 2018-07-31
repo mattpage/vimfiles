@@ -1,4 +1,4 @@
-# Vim Setup
+# vim setup
 
 ## requirements
 * Vim 8+ with scripting support (vim-nox on debian)
@@ -111,25 +111,15 @@ setxkbmap -layout us -option ctrl:nocaps
 '\reload' clear cache and reload all files 
 
 # resources
-[vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
-
-[nerdtree](https://github.com/scrooloose/nerdtree)
-
-[bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
-
-[bclose](https://github.com/rbgrouleff/bclose.vim)
-
-[ale](https://github.com/w0rp/ale)
-
-[fzf](https://github.com/junegunn/fzf)
-
-[fzf.vim](https://github.com/junegunn/fzf.vim)
-
-[vim-commentary](https://github.com/tpope/vim-commentary)
-
-[vim-javascript](https://github.com/pangloss/vim-javascript)
-
-[vim-jsx](https://github.com/mxw/vim-jsx)
-
-[YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+* [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
+* [nerdtree](https://github.com/scrooloose/nerdtree)
+* [bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
+* [bclose](https://github.com/rbgrouleff/bclose.vim)
+* [ale](https://github.com/w0rp/ale)
+* [fzf](https://github.com/junegunn/fzf)
+* [fzf.vim](https://github.com/junegunn/fzf.vim)
+* [vim-commentary](https://github.com/tpope/vim-commentary)
+* [vim-javascript](https://github.com/pangloss/vim-javascript)
+* [vim-jsx](https://github.com/mxw/vim-jsx)
+* [youcompleteme](https://github.com/Valloric/YouCompleteMe)
 
