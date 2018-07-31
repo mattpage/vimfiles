@@ -79,6 +79,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ## remap capslock
 To map capslock to ctrl, add this to .bashrc
 ```
+#debian
 setxkbmap -layout us -option ctrl:nocaps
 
 ```
