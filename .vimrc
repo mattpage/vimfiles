@@ -11,6 +11,13 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
+" change cursor based on mode
+if $TERM_PROGRAM =~ "iTerm"
+   let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+   let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+   let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
+
 " if a given file type (perl, ruby, python, c, etc) has its own special auto-indentation rules, use them
 filetype plugin indent on
 
