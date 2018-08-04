@@ -8,48 +8,28 @@
 
 use pathogen for installing plugins and runtime files.
 ```
-mkdir -p ~/.vim/autoload ~/.vim/bundle
+mkdir -p ~/.vim/autoload ~/.vim/backup ~/.vim/bundle
 git clone https://github.com/tpope/vim-pathogen.git
 cp vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
 ```
 
+## install .vimrc
+```
+cp .vimrc ~
+```
+
 ## install vim plugins
 ```
-git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-git clone https://github.com/vim-scripts/bufexplorer.zip.git ~/.vim/bundle/bufexplorer.zip
-git clone https://github.com/rbgrouleff/bclose.vim.git ~/.vim/bundle/bclose.vim
-git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale
-git clone https://github.com/junegunn/fzf.vim ~/.vim/bundle/fzf.vim
-git clone https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commentary
-git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
+git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized &&
+git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree &&
+git clone https://github.com/vim-scripts/bufexplorer.zip.git ~/.vim/bundle/bufexplorer.zip &&
+git clone https://github.com/rbgrouleff/bclose.vim.git ~/.vim/bundle/bclose.vim &&
+git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale &&
+git clone https://github.com/junegunn/fzf.vim ~/.vim/bundle/fzf.vim &&
+git clone https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commentary &&
+git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript &&
 git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx
 ```
-
-## install youcompleteme
-
-```
-sudo npm install -g typescript
-
-#if debian
-sudo apt-get install build-essential cmake
-sudo apt-get install python-dev python3-dev
-
-#if osx
-brew install python cmake
-
-git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
-cd ~/.vim/bundle/YouCompleteMe
-git submodule update --init --recursive
-./install.py
-```
-
-## update vim help
-```
-$ vim
-:Helptags 
-```
-
 ## ale linting support
 Ale is an asynchronous linting engine.
 
@@ -117,16 +97,6 @@ setxkbmap -layout us -option ctrl:nocaps
 '\fc'     fuzzy find git commits
 ```
 
-### ycm key mappings
-```
-'\go'     goto definition
-'\fix'    fix it
-'\ren'    refactor rename
-'\format' reformat the buffer or selection
-'\restart' restart the semantic server
-'\reload' clear cache and reload all files 
-```
-
 # resources
 * [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
@@ -138,5 +108,4 @@ setxkbmap -layout us -option ctrl:nocaps
 * [vim-commentary](https://github.com/tpope/vim-commentary)
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-jsx](https://github.com/mxw/vim-jsx)
-* [youcompleteme](https://github.com/Valloric/YouCompleteMe)
 
