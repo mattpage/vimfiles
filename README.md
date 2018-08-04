@@ -28,7 +28,7 @@ git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale &&
 git clone https://github.com/junegunn/fzf.vim ~/.vim/bundle/fzf.vim &&
 git clone https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commentary &&
 git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript &&
-git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx
+git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx &&
 git clone https://github.com/ajh17/VimCompletesMe.git ~/.vim/bundle/VimCompletesMe
 ```
 ## ale linting support
