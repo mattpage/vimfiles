@@ -29,6 +29,7 @@ git clone https://github.com/junegunn/fzf.vim ~/.vim/bundle/fzf.vim &&
 git clone https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commentary &&
 git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript &&
 git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx
+git clone https://github.com/ajh17/VimCompletesMe.git ~/.vim/bundle/VimCompletesMe
 ```
 ## ale linting support
 Ale is an asynchronous linting engine.
@@ -108,4 +109,5 @@ setxkbmap -layout us -option ctrl:nocaps
 * [vim-commentary](https://github.com/tpope/vim-commentary)
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-jsx](https://github.com/mxw/vim-jsx)
+* [vimcompletesme](https://github.com/ajh17/VimCompletesMe)
 
