@@ -61,6 +61,12 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
+use ripgrep for searching since it supports ignoring directories (node_modules)
+```
+# osx
+brew install ripgrep
+```
+
 then add the following to ~/.fzf.bash or ~/.fzf.zsh
 ```
 # set fzf source to ripgrep and ignore some dirs
