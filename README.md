@@ -27,6 +27,7 @@ git clone https://github.com/vim-scripts/bufexplorer.zip.git ~/.vim/bundle/bufex
 git clone https://github.com/rbgrouleff/bclose.vim.git ~/.vim/bundle/bclose.vim &&
 git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale &&
 git clone https://github.com/junegunn/fzf.vim ~/.vim/bundle/fzf.vim &&
+git clone https://github.com/jremmen/vim-ripgrep.git ~/.vim/bundle/vim-ripgrep &&
 git clone https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commentary &&
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive &&
 git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript &&
@@ -87,7 +88,6 @@ To map capslock to ctrl, add this to .bashrc
 ```
 #debian
 setxkbmap -layout us -option ctrl:nocaps
-
 ```
 
 ## key mappings
@@ -123,6 +123,12 @@ setxkbmap -layout us -option ctrl:nocaps
 '\fc'     fuzzy find git commits
 ```
 
+### ripgrep commands
+```
+':Rg'     <string|pattern>
+':RgRoot' show root search dir
+```
+
 # resources
 * [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
@@ -131,6 +137,7 @@ setxkbmap -layout us -option ctrl:nocaps
 * [ale](https://github.com/w0rp/ale)
 * [fzf](https://github.com/junegunn/fzf)
 * [fzf.vim](https://github.com/junegunn/fzf.vim)
+* [vim-ripgrep](https://github.com/jremmen/vim-ripgrep)
 * [vim-commentary](https://github.com/tpope/vim-commentary)
 * [vim-fugitive](https://github.com/tpope/vim-fugitive)
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
