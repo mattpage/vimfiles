@@ -179,4 +179,9 @@ else
   let g:gutentags_ctags_executable = 'ctags'
 endif
 
-:set statusline+=%{gutentags#statusline()}
+set statusline+=%{gutentags#statusline()}
+
+" --- vim-airline ---
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+
