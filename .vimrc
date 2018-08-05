@@ -171,3 +171,12 @@ let g:javascript_plugin_jsdoc = 0
 " jsx extension is not required for syntax highlighting and indenting
 let g:jsx_ext_required = 0
 
+" --- vim-gutentags ---
+if filereadable('/usr/local/bin/ctags')
+  " homebrew
+  let g:gutentags_ctags_executable = '/usr/local/bin/ctags'
+else
+  let g:gutentags_ctags_executable = 'ctags'
+endif
+
+:set statusline+=%{gutentags#statusline()}

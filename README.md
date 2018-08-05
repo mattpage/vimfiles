@@ -13,9 +13,10 @@ git clone https://github.com/tpope/vim-pathogen.git
 cp vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
 ```
 
-## install .vimrc
+## install dotfiles
 ```
 cp .vimrc ~
+cp .ctags ~
 ```
 
 ## install vim plugins
@@ -29,8 +30,11 @@ git clone https://github.com/junegunn/fzf.vim ~/.vim/bundle/fzf.vim &&
 git clone https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commentary &&
 git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript &&
 git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx &&
-git clone https://github.com/ajh17/VimCompletesMe.git ~/.vim/bundle/VimCompletesMe
+git clone https://github.com/ajh17/VimCompletesMe.git ~/.vim/bundle/VimCompletesMe &&
+git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-gutentags &&
+git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 ```
+
 ## ale linting support
 Ale is an asynchronous linting engine.
 
@@ -55,6 +59,12 @@ It is a replacement for ctrl+p.
 ```
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+```
+
+## ctags
+```
+#osx
+brew install ctags --HEAD
 ```
 
 ## remap capslock
@@ -110,4 +120,5 @@ setxkbmap -layout us -option ctrl:nocaps
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-jsx](https://github.com/mxw/vim-jsx)
 * [vimcompletesme](https://github.com/ajh17/VimCompletesMe)
+* [ctags-patterns-for-javascript](https://github.com/romainl/ctags-patterns-for-javascript)
 
