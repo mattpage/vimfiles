@@ -61,6 +61,13 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
+then add the following to ~/.fzf.bash or ~/.fzf.zsh
+```
+# set fzf source to ripgrep and ignore some dirs
+# see https://github.com/junegunn/fzf#respecting-gitignore
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,coverage}/*" 2> /dev/null'
+```
+
 ## ctags
 ```
 #osx
