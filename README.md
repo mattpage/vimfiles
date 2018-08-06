@@ -29,13 +29,10 @@ git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale &&
 git clone https://github.com/junegunn/fzf.vim ~/.vim/bundle/fzf.vim &&
 git clone https://github.com/jremmen/vim-ripgrep.git ~/.vim/bundle/vim-ripgrep &&
 git clone https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commentary &&
-git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive &&
 git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript &&
 git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx &&
 git clone https://github.com/ajh17/VimCompletesMe.git ~/.vim/bundle/VimCompletesMe &&
 git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-gutentags &&
-git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline &&
-git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 ```
 
 ## ale linting support
@@ -64,7 +61,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
-use ripgrep for searching since it supports ignoring directories (node_modules)
+use ripgrep for searching since it supports ignoring directories like 'node_modules'
 ```
 # osx
 brew install ripgrep
@@ -139,11 +136,8 @@ setxkbmap -layout us -option ctrl:nocaps
 * [fzf.vim](https://github.com/junegunn/fzf.vim)
 * [vim-ripgrep](https://github.com/jremmen/vim-ripgrep)
 * [vim-commentary](https://github.com/tpope/vim-commentary)
-* [vim-fugitive](https://github.com/tpope/vim-fugitive)
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-jsx](https://github.com/mxw/vim-jsx)
 * [vimcompletesme](https://github.com/ajh17/VimCompletesMe)
 * [ctags-patterns-for-javascript](https://github.com/romainl/ctags-patterns-for-javascript)
-* [vim-airline](https://github.com/vim-airline/vim-airline)
-* [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 

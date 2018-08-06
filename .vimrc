@@ -115,7 +115,6 @@ vnoremap v <esc>
 " unhilight on escape escape
 nnoremap <esc><esc> :nohl<cr>
 
-
 " Map Ctrl+Y and Ctrl+E to move Quarter page up/down respectively
 " this overrides normal view scrolling behavior, but I never use that
 function! ScrollQuarter(move)
@@ -180,8 +179,4 @@ else
 endif
 
 set statusline+=%{gutentags#statusline()}
-
-" --- vim-airline ---
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
 
