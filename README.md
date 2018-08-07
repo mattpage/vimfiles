@@ -32,7 +32,7 @@ git clone https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commenta
 git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript &&
 git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx &&
 git clone https://github.com/ajh17/VimCompletesMe.git ~/.vim/bundle/VimCompletesMe &&
-git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-gutentags &&
+git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-gutentags
 ```
 
 ## ale linting support
