@@ -102,6 +102,15 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 " Show (partial) command in the status line
 set showcmd
 
+" yank to clipboard
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
+endif
+
 " Super easy saves
 map <leader>s :w<CR>
 
