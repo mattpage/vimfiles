@@ -66,6 +66,7 @@ use ripgrep for searching since it supports ignoring directories like 'node_modu
 # osx
 brew install ripgrep
 ```
+or see ripgrep [installation](https://github.com/BurntSushi/ripgrep#installation)
 
 then add the following to ~/.fzf.bash or ~/.fzf.zsh
 ```
