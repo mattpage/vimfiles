@@ -79,6 +79,9 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 ```
 #osx
 brew install ctags --HEAD
+
+#debian
+apt install exuberant-ctags
 ```
 
 ## remap capslock
