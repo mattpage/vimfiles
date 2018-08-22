@@ -32,7 +32,8 @@ git clone https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commenta
 git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript &&
 git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx &&
 git clone https://github.com/ajh17/VimCompletesMe.git ~/.vim/bundle/VimCompletesMe &&
-git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-gutentags
+git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-gutentags &&
+git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim
 ```
 
 ## ale linting support
@@ -144,4 +145,5 @@ setxkbmap -layout us -option ctrl:nocaps
 * [vim-jsx](https://github.com/mxw/vim-jsx)
 * [vimcompletesme](https://github.com/ajh17/VimCompletesMe)
 * [ctags-patterns-for-javascript](https://github.com/romainl/ctags-patterns-for-javascript)
+* [lightline](https://github.com/itchyny/lightline.vim)
 
