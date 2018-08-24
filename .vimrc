@@ -13,9 +13,14 @@ colorscheme solarized
 
 " change cursor based on mode
 if $TERM_PROGRAM =~ "iTerm"
-   let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-   let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-   let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  endif
 else
   " Use a blinking vertical bar cursor in insert mode, and a blinking block in normal
   if &term == 'xterm-256color' || &term == 'screen-256color'
@@ -23,6 +28,7 @@ else
     let &t_EI = "\<Esc>[1 q"
   endif
 endif
+
 
 " if a given file type (perl, ruby, python, c, etc) has its own special auto-indentation rules, use them
 filetype plugin indent on
