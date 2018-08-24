@@ -19,6 +19,18 @@ cp .vimrc ~
 cp .ctags ~
 ```
 
+## tmux
+
+```
+cp .tmux.conf ~
+```
+
+For colors in tmux, add the following to .bashrc/.zshrc:
+```
+export TERM="screen-256color"
+alias tmux="TERM=screen-256color-bce tmux"
+```
+
 ## install vim plugins
 ```
 git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized &&
