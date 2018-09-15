@@ -36,6 +36,9 @@ filetype plugin indent on
 " Set file encoding
 set encoding=utf-8
 
+" clipboard 
+set clipboard=unnamed
+
 " Show line numbers
 set number
 

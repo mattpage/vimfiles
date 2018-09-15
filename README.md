@@ -3,6 +3,7 @@
 ## requirements
 * Vim 8+ with scripting support (vim-nox on debian)
 * Node.js
+* Homebrew (osx)
 
 ## install pathogen
 
@@ -17,6 +18,12 @@ cp vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
 ```
 cp .vimrc ~
 cp .ctags ~
+```
+
+## reattach-to-user-namespace
+for system clipboard access
+```
+brew install reattach-to-user-namespace
 ```
 
 ## tmux
