@@ -151,10 +151,10 @@ map <Leader>bb :bprevious<cr>
 map <Leader>bc :Bclose<cr>
 
 " --- ALE ---
-let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
 
 " :ALEFix will try and fix your JS code with ESLint.
-let g:ale_fixers = {'javascript': ['prettier-eslint', 'eslint']}
+let g:ale_fixers = {'javascript': ['prettier-eslint', 'eslint'], 'ruby': ['rubocop']}
 
 " fix files automatically on save.
 let g:ale_fix_on_save = 1

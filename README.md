@@ -52,7 +52,8 @@ git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javas
 git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx &&
 git clone https://github.com/ajh17/VimCompletesMe.git ~/.vim/bundle/VimCompletesMe &&
 git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-gutentags &&
-git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim
+git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim &&
+git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
 ```
 
 ## ale linting support
@@ -71,6 +72,8 @@ Install prettier-eslint in your project (or globally)
 ```
 npm install prettier-eslint --save-dev
 ```
+
+For ruby linting, make sure rubocop is on your path.
 
 ## fzf
 fzf is a command-line fuzzy finder. 
@@ -165,4 +168,5 @@ setxkbmap -layout us -option ctrl:nocaps
 * [vimcompletesme](https://github.com/ajh17/VimCompletesMe)
 * [ctags-patterns-for-javascript](https://github.com/romainl/ctags-patterns-for-javascript)
 * [lightline](https://github.com/itchyny/lightline.vim)
+* [vim-rails](https://github.com/tpope/vim-rails)
 
