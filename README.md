@@ -166,6 +166,7 @@ setxkbmap -layout us -option ctrl:nocaps
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-jsx](https://github.com/mxw/vim-jsx)
 * [vimcompletesme](https://github.com/ajh17/VimCompletesMe)
+* [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags.git)
 * [ctags-patterns-for-javascript](https://github.com/romainl/ctags-patterns-for-javascript)
 * [lightline](https://github.com/itchyny/lightline.vim)
 * [vim-rails](https://github.com/tpope/vim-rails)
