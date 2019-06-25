@@ -186,6 +186,7 @@ if filereadable('/usr/local/bin/ctags')
 else
   let g:gutentags_ctags_executable = 'ctags'
 endif
-
 set statusline+=%{gutentags#statusline()}
 
+"--- enable matchit macro for do...end and various others ---
+runtime macros/matchit.vim
