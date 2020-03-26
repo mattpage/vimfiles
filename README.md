@@ -54,6 +54,8 @@ git clone https://github.com/ajh17/VimCompletesMe.git ~/.vim/bundle/VimCompletes
 git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-gutentags &&
 git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim &&
 git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
+git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
+git clone https://github.com/tpope/vim-rhubarb.git ~/.vim/bundle/vim-rhubarb
 ```
 
 ## ale linting support
