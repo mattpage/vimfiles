@@ -53,8 +53,8 @@ git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx &&
 git clone https://github.com/ajh17/VimCompletesMe.git ~/.vim/bundle/VimCompletesMe &&
 git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-gutentags &&
 git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim &&
-git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
-git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
+git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails &&
+git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive &&
 git clone https://github.com/tpope/vim-rhubarb.git ~/.vim/bundle/vim-rhubarb
 ```
 
@@ -78,7 +78,7 @@ npm install prettier-eslint --save-dev
 For ruby linting, make sure rubocop is on your path.
 
 ## fzf
-fzf is a command-line fuzzy finder. 
+fzf is a command-line fuzzy finder.
 It is a replacement for ctrl+p.
 
 ```
@@ -122,10 +122,12 @@ setxkbmap -layout us -option ctrl:nocaps
 'v'       leave visual mode
 'esc+esc' no highlight
 '\s'      save
-'ctrl+d'  scroll down 
+'ctrl+d'  scroll down
 'ctrl+e'  scroll down 1/4 page
-'ctrl+u'  scroll up 
-'ctrl+y'  scroll up 1/4 page 
+'ctrl+u'  scroll up
+'ctrl+y'  scroll up 1/4 page
+\rtw      remove trailing whitespace
+\rts      remove trailing whitespace
 ```
 
 ### bufexplorer key mappings

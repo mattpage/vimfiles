@@ -36,7 +36,7 @@ filetype plugin indent on
 " Set file encoding
 set encoding=utf-8
 
-" clipboard 
+" clipboard
 set clipboard=unnamed
 
 " Show line numbers
@@ -104,6 +104,25 @@ set backupcopy=yes
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+
+" highlight trailing whitespace as errors
+match ErrorMsg '\s\+$'
+
+" Removes trailing spaces
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+
+" remove trailing whitespace
+nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
+nnoremap <Leader>rtw :call TrimWhiteSpace()<CR>
+
+" if has("autocmd")
+"   autocmd FileWritePre    * :call TrimWhiteSpace()
+"   autocmd FileAppendPre   * :call TrimWhiteSpace()
+"   autocmd FilterWritePre  * :call TrimWhiteSpace()
+"   autocmd BufWritePre     * :call TrimWhiteSpace()
+" endif
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
