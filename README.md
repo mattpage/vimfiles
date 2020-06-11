@@ -1,9 +1,9 @@
 # vim setup
 
 ## requirements
-* Vim 8+ with scripting support (vim-nox on debian)
+* Vim 8+ with scripting support (vim-nox on linux)
 * Node.js
-* Homebrew (osx)
+* Homebrew or Linuxbrew
 
 ## install pathogen
 
@@ -21,21 +21,9 @@ cp .ctags ~
 ```
 
 ## reattach-to-user-namespace
-for system clipboard access
+for system clipboard access on osx
 ```
 brew install reattach-to-user-namespace
-```
-
-## tmux
-
-```
-cp .tmux.conf ~
-```
-
-For colors in tmux, add the following to .bashrc/.zshrc:
-```
-export TERM="screen-256color"
-alias tmux="TERM=screen-256color-bce tmux"
 ```
 
 ## install vim plugins
@@ -55,7 +43,8 @@ git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-
 git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim &&
 git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails &&
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive &&
-git clone https://github.com/tpope/vim-rhubarb.git ~/.vim/bundle/vim-rhubarb
+git clone https://github.com/tpope/vim-rhubarb.git ~/.vim/bundle/vim-rhubarb &&
+git clone https://github.com/MattesGroeger/vim-bookmarks ~/.vim/bundle/vim-bookmarks
 ```
 
 ## ale linting support
@@ -88,7 +77,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 use ripgrep for searching since it supports ignoring directories like 'node_modules'
 ```
-# osx
 brew install ripgrep
 ```
 or see ripgrep [installation](https://github.com/BurntSushi/ripgrep#installation)
@@ -105,14 +93,14 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 #osx
 brew install ctags --HEAD
 
-#debian
-apt install exuberant-ctags
+#linux
+sudo apt install exuberant-ctags
 ```
 
 ## remap capslock
 To map capslock to ctrl, add this to .bashrc
 ```
-#debian
+#linux
 setxkbmap -layout us -option ctrl:nocaps
 ```
 
@@ -174,4 +162,5 @@ setxkbmap -layout us -option ctrl:nocaps
 * [ctags-patterns-for-javascript](https://github.com/romainl/ctags-patterns-for-javascript)
 * [lightline](https://github.com/itchyny/lightline.vim)
 * [vim-rails](https://github.com/tpope/vim-rails)
-
+* [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks)
+* [vim-fugitive](https://github.com/tpope/vim-fugitive)
