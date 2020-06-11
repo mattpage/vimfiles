@@ -145,6 +145,17 @@ setxkbmap -layout us -option ctrl:nocaps
 ':RgRoot' show root search dir
 ```
 
+### vim bookmarks commands
+```
+'mm'   Add/remove bookmark at current line
+'mi'   Add/edit/remove annotation at current line
+'mn'   Jump to next bookmark in buffer
+'mp'   Jump to previous bookmark in buffer
+'ma'   Show all bookmarks (toggle)
+'mc'   Clear bookmarks in current buffer only
+'mx'   Clear bookmarks in all buffers
+```
+
 # resources
 * [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
