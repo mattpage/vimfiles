@@ -209,3 +209,11 @@ set statusline+=%{gutentags#statusline()}
 
 "--- enable matchit macro for do...end and various others ---
 runtime macros/matchit.vim
+
+" --- pretty print json using python
+command! PrettyPrintJSON %!python -m json.tool
+command! PrettyJSON PrettyPrintJSON
+command! PrettyJson PrettyPrintJSON
+command! FormatJSON PrettyPrintJSON
+command! FormatJson PrettyPrintJSON
+
