@@ -169,11 +169,18 @@ map <Leader>bf :bnext<cr>
 map <Leader>bb :bprevious<cr>
 map <Leader>bc :Bclose<cr>
 
-" --- ALE ---
-let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
 
-" :ALEFix will try and fix your JS code with ESLint.
+" --- ALE ---
+let g:ale_ruby_rubocop_executable = 'bin/rubocop'
+
+let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
 let g:ale_fixers = {'javascript': ['prettier-eslint', 'eslint'], 'ruby': ['rubocop']}
+
+" use rubocop if there's a config for it
+if filereadable(".rubocop.yml")
+  let g:ale_linters.ruby = ['mri', 'rubocop']
+  let g:ale_fixers.ruby = ['rubocop']
+endif
 
 " fix files automatically on save.
 let g:ale_fix_on_save = 1
@@ -216,4 +223,3 @@ command! PrettyJSON PrettyPrintJSON
 command! PrettyJson PrettyPrintJSON
 command! FormatJSON PrettyPrintJSON
 command! FormatJson PrettyPrintJSON
-
