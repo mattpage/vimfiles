@@ -44,7 +44,13 @@ git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim &
 git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails &&
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive &&
 git clone https://github.com/tpope/vim-rhubarb.git ~/.vim/bundle/vim-rhubarb &&
-git clone https://github.com/MattesGroeger/vim-bookmarks ~/.vim/bundle/vim-bookmarks
+git clone https://github.com/MattesGroeger/vim-bookmarks.git ~/.vim/bundle/vim-bookmarks &&
+git clone https://github.com/bkad/CamelCaseMotion.git ~/.vim/bundle/CamelCaseMotion
+```
+
+## generate documentation
+```
+:Helptags
 ```
 
 ## ale linting support
@@ -91,7 +97,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 ## ctags
 ```
 #osx
-brew install ctags --HEAD
+brew brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 #linux
 sudo apt install exuberant-ctags
@@ -162,7 +168,6 @@ setxkbmap -layout us -option ctrl:nocaps
 * [bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
 * [bclose](https://github.com/rbgrouleff/bclose.vim)
 * [ale](https://github.com/w0rp/ale)
-* [fzf](https://github.com/junegunn/fzf)
 * [fzf.vim](https://github.com/junegunn/fzf.vim)
 * [vim-ripgrep](https://github.com/jremmen/vim-ripgrep)
 * [vim-commentary](https://github.com/tpope/vim-commentary)
@@ -173,5 +178,7 @@ setxkbmap -layout us -option ctrl:nocaps
 * [ctags-patterns-for-javascript](https://github.com/romainl/ctags-patterns-for-javascript)
 * [lightline](https://github.com/itchyny/lightline.vim)
 * [vim-rails](https://github.com/tpope/vim-rails)
-* [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks)
 * [vim-fugitive](https://github.com/tpope/vim-fugitive)
+* [vim-rhubarb](https://github.com/tpope/vim-rhubarb)
+* [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks)
+* [CamelCaseMotion](https://github.com/bkad/CamelCaseMotion)
