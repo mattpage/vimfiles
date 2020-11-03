@@ -175,6 +175,7 @@ let g:ale_ruby_rubocop_executable = 'bin/rubocop'
 
 let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
 let g:ale_fixers = {'javascript': ['prettier-eslint', 'eslint'], 'ruby': ['rubocop']}
+let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
 
 " use rubocop if there's a config for it
 if filereadable(".rubocop.yml")
