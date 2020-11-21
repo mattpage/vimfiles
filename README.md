@@ -1,7 +1,7 @@
 # vim setup
 
 ## requirements
-* Vim 8+ with scripting support (vim-nox on linux)
+* Vim 8+ with scripting support
 * Node.js
 * Homebrew or Linuxbrew
 
@@ -100,7 +100,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 brew brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 #linux
-sudo apt install exuberant-ctags
+sudo apt install universal-ctags
 ```
 
 ## remap capslock
