@@ -45,7 +45,8 @@ git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails &&
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive &&
 git clone https://github.com/tpope/vim-rhubarb.git ~/.vim/bundle/vim-rhubarb &&
 git clone https://github.com/MattesGroeger/vim-bookmarks.git ~/.vim/bundle/vim-bookmarks &&
-git clone https://github.com/bkad/CamelCaseMotion.git ~/.vim/bundle/CamelCaseMotion
+git clone https://github.com/bkad/CamelCaseMotion.git ~/.vim/bundle/CamelCaseMotion &&
+git clone https://github.com/vim-test/vim-test.git  ~/.vim/bundle/vim-test
 ```
 
 ## generate documentation
@@ -161,6 +162,12 @@ setxkbmap -layout us -option ctrl:nocaps
 'mc'   Clear bookmarks in current buffer only
 'mx'   Clear bookmarks in all buffers
 ```
+### vim test commands
+'\tn'  Run the test nearest to the cursor
+'\tf'  Run all tests in the current file
+'\ts'  Run the whole test suite
+'\tl'  Run the last test
+'\tv'  Visit the test file from which you last ran your tests
 
 # resources
 * [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
@@ -182,3 +189,4 @@ setxkbmap -layout us -option ctrl:nocaps
 * [vim-rhubarb](https://github.com/tpope/vim-rhubarb)
 * [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks)
 * [CamelCaseMotion](https://github.com/bkad/CamelCaseMotion)
+* [vim-test](https://github.com/vim-test/vim-test)

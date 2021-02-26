@@ -161,7 +161,6 @@ nnoremap <C-Y> <up> :call ScrollQuarter('up')<CR>
 nnoremap <C-E> <down> :call ScrollQuarter('down')<CR>
 
 " --- NERDTree ---
-map leader+n to toggle the tree
 map <Leader>n :NERDTreeToggle<CR>
 
 " --- Buffer switching ---
@@ -169,6 +168,14 @@ map <Leader>bf :bnext<cr>
 map <Leader>bb :bprevious<cr>
 map <Leader>bc :Bclose<cr>
 
+" --- vim-test ---
+let test#strategy = "vimterminal"
+
+map <Leader>tn :TestNearest<CR>
+map <Leader>tf :TestFile<CR>
+map <Leader>ts :TestSuite<CR>
+map <Leader>tl :TestLast<CR>
+map <Leader>tv :TestVisit<CR>
 
 " --- ALE ---
 let g:ale_ruby_rubocop_executable = 'bin/rubocop'
