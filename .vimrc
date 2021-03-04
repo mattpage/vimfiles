@@ -234,10 +234,10 @@ let g:sessions_dir = '~/vim-sessions'
 
 " start session - displays listing of existing session files.
 "                 BS are to delete the  *.vim part after typing it.
-exec 'nnoremap <Leader>ss :Obsession ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+exec 'nnoremap <Leader>ss :Obsession ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
 " restore session
-exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
+exec 'nnoremap <Leader>sr :so ' . g:sessions_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
 " pause session
 nnoremap <Leader>sp :Obsession<CR>

@@ -47,7 +47,7 @@ git clone https://github.com/tpope/vim-rhubarb.git ~/.vim/bundle/vim-rhubarb &&
 git clone https://github.com/MattesGroeger/vim-bookmarks.git ~/.vim/bundle/vim-bookmarks &&
 git clone https://github.com/bkad/CamelCaseMotion.git ~/.vim/bundle/CamelCaseMotion &&
 git clone https://github.com/vim-test/vim-test.git  ~/.vim/bundle/vim-test &&
-git clone git clone git://github.com/tpope/vim-obsession.git  ~/.vim/bundle/vim-obsession
+git clone https://github.com/tpope/vim-obsession.git  ~/.vim/bundle/vim-obsession
 ```
 
 ## generate documentation
@@ -197,7 +197,6 @@ setxkbmap -layout us -option ctrl:nocaps
 * [vim-jsx](https://github.com/mxw/vim-jsx)
 * [vimcompletesme](https://github.com/ajh17/VimCompletesMe)
 * [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags.git)
-* [ctags-patterns-for-javascript](https://github.com/romainl/ctags-patterns-for-javascript)
 * [lightline](https://github.com/itchyny/lightline.vim)
 * [vim-rails](https://github.com/tpope/vim-rails)
 * [vim-fugitive](https://github.com/tpope/vim-fugitive)
