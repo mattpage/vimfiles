@@ -21,7 +21,7 @@ cp .ctags ~
 ```
 
 ## reattach-to-user-namespace
-for system clipboard access on osx
+for system clipboard access on macos
 ```
 brew install reattach-to-user-namespace
 ```
@@ -46,7 +46,8 @@ git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive &
 git clone https://github.com/tpope/vim-rhubarb.git ~/.vim/bundle/vim-rhubarb &&
 git clone https://github.com/MattesGroeger/vim-bookmarks.git ~/.vim/bundle/vim-bookmarks &&
 git clone https://github.com/bkad/CamelCaseMotion.git ~/.vim/bundle/CamelCaseMotion &&
-git clone https://github.com/vim-test/vim-test.git  ~/.vim/bundle/vim-test
+git clone https://github.com/vim-test/vim-test.git  ~/.vim/bundle/vim-test &&
+git clone git clone git://github.com/tpope/vim-obsession.git  ~/.vim/bundle/vim-obsession
 ```
 
 ## generate documentation
@@ -97,7 +98,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 
 ## ctags
 ```
-#osx
+#macos
 brew brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 #linux
@@ -169,6 +170,20 @@ setxkbmap -layout us -option ctrl:nocaps
 '\tl'  Run the last test
 '\tv'  Visit the test file from which you last ran your tests
 
+### vim session commands
+'\ss'  start a session
+'\sr'  restore a session
+'\sp'  pause a session
+'\sx'  destroy a session
+
+
+### JSON Tools
+:PrettyPrintJSON  Prettify JSON
+:PrettyJSON       Alias to above
+:PrettyJson       Alias to above
+:FormatJSON       Alias to above
+:FormatJson       Alias to above
+
 # resources
 * [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
@@ -190,3 +205,4 @@ setxkbmap -layout us -option ctrl:nocaps
 * [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks)
 * [CamelCaseMotion](https://github.com/bkad/CamelCaseMotion)
 * [vim-test](https://github.com/vim-test/vim-test)
+* [vim-obsession](https://github.com/tpope/vim-obsession)

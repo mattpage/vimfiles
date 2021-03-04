@@ -229,6 +229,21 @@ set statusline+=%{gutentags#statusline()}
 " --- CamelCaseMotion ---
 let g:camelcasemotion_key = '<leader>'
 
+" --- vim-obsession ---
+let g:sessions_dir = '~/vim-sessions'
+
+" start session - displays listing of existing session files.
+"                 BS are to delete the  *.vim part after typing it.
+exec 'nnoremap <Leader>ss :Obsession ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+
+" restore session
+exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
+
+" pause session
+nnoremap <Leader>sp :Obsession<CR>
+
+" destroy session
+nnoremap <Leader>sx :Obsession!<CR>
 
 "--- enable matchit macro for do...end and various others ---
 runtime macros/matchit.vim
