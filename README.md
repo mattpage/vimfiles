@@ -164,25 +164,30 @@ setxkbmap -layout us -option ctrl:nocaps
 'mx'   Clear bookmarks in all buffers
 ```
 ### vim test commands
+```
 '\tn'  Run the test nearest to the cursor
 '\tf'  Run all tests in the current file
 '\ts'  Run the whole test suite
 '\tl'  Run the last test
 '\tv'  Visit the test file from which you last ran your tests
+```
 
 ### vim session commands
-'\ss'  start a session
-'\sr'  restore a session
-'\sp'  pause a session
-'\sx'  destroy a session
-
+```
+'\ss'  Start a session
+'\sr'  Restore a session
+'\sp'  Pause a session
+'\sx'  Destroy a session
+```
 
 ### JSON Tools
+```
 :PrettyPrintJSON  Prettify JSON
 :PrettyJSON       Alias to above
 :PrettyJson       Alias to above
 :FormatJSON       Alias to above
 :FormatJson       Alias to above
+```
 
 # resources
 * [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
