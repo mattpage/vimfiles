@@ -254,3 +254,7 @@ command! PrettyJSON PrettyPrintJSON
 command! PrettyJson PrettyPrintJSON
 command! FormatJSON PrettyPrintJSON
 command! FormatJson PrettyPrintJSON
+
+" --- copy file path of current buffer to clipboard ---
+nnoremap <leader>cp :!echo -n % \| pbcopy<cr>
+

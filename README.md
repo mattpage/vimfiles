@@ -124,6 +124,7 @@ setxkbmap -layout us -option ctrl:nocaps
 'ctrl+y'  scroll up 1/4 page
 \rtw      remove trailing whitespace
 \rts      remove trailing whitespace
+\cp       copy the file path of the current buffer to the clipboard
 ```
 
 ### bufexplorer key mappings
