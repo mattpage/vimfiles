@@ -1,6 +1,7 @@
 # vim setup
 
 ## requirements
+
 * Vim 8+ with scripting support
 * Node.js
 * Homebrew or Linuxbrew
@@ -8,26 +9,31 @@
 ## install pathogen
 
 use pathogen for installing plugins and runtime files.
-```
+
+```shell
 mkdir -p ~/.vim/autoload ~/.vim/backup ~/.vim/bundle
 git clone https://github.com/tpope/vim-pathogen.git
 cp vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
 ```
 
 ## install dotfiles
-```
+
+```shell
 cp .vimrc ~
 cp .ctags ~
 ```
 
 ## reattach-to-user-namespace
+
 for system clipboard access on macos
-```
+
+```shell
 brew install reattach-to-user-namespace
 ```
 
 ## install vim plugins
-```
+
+```shell
 git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized &&
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree &&
 git clone https://github.com/vim-scripts/bufexplorer.zip.git ~/.vim/bundle/bufexplorer.zip &&
@@ -48,19 +54,23 @@ git clone https://github.com/MattesGroeger/vim-bookmarks.git ~/.vim/bundle/vim-b
 git clone https://github.com/bkad/CamelCaseMotion.git ~/.vim/bundle/CamelCaseMotion &&
 git clone https://github.com/vim-test/vim-test.git  ~/.vim/bundle/vim-test &&
 git clone https://github.com/tpope/vim-obsession.git  ~/.vim/bundle/vim-obsession
+git clone https://github.com/Yggdroot/indentLine.git ~/.vim/bundle/indentLine
 ```
 
 ## generate documentation
-```
+
+```shell
 :Helptags
 ```
 
 ## ale linting support
+
 Ale is an asynchronous linting engine.
 
 Install eslint in your local project (or globally)
 and setup a default eslint config for ale to use
-```
+
+```shell
 npm install eslint --save-dev
 eslint --init
 ```
@@ -68,36 +78,48 @@ eslint --init
 it also supports prettier!
 
 Install prettier-eslint in your project (or globally)
-```
+
+```shell
 npm install prettier-eslint --save-dev
 ```
 
 For ruby linting, make sure rubocop is on your path.
 
+For yaml linting, you need to install `yamlint`
+
+```shell
+brew install yamllint
+```
+
 ## fzf
+
 fzf is a command-line fuzzy finder.
 It is a replacement for ctrl+p.
 
-```
+```shell
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
 use ripgrep for searching since it supports ignoring directories like 'node_modules'
-```
+
+```shell
 brew install ripgrep
 ```
+
 or see ripgrep [installation](https://github.com/BurntSushi/ripgrep#installation)
 
 then add the following to ~/.fzf.bash or ~/.fzf.zsh
-```
+
+```shell
 # set fzf source to ripgrep and ignore some dirs
 # see https://github.com/junegunn/fzf#respecting-gitignore
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,coverage}/*" 2> /dev/null'
 ```
 
 ## ctags
-```
+
+```shell
 #macos
 brew brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
@@ -106,14 +128,17 @@ sudo apt install universal-ctags
 ```
 
 ## remap capslock
+
 To map capslock to ctrl, add this to .bashrc
-```
+
+```shell
 #linux
 setxkbmap -layout us -option ctrl:nocaps
 ```
 
 ## key mappings
-```
+
+```shell
 'jj'      leave insert mode (same as esc)
 'v'       leave visual mode
 'esc+esc' no highlight
@@ -127,8 +152,9 @@ setxkbmap -layout us -option ctrl:nocaps
 \cp       copy the file path of the current buffer to the clipboard
 ```
 
-### bufexplorer key mappings
-```
+## bufexplorer key mappings
+
+```shell
 '\be'     open buffer explorer (normal)
 '\bs'     open buffer explorer (horiz split)
 '\bv'     open buffer explorer (vert split)
@@ -137,25 +163,29 @@ setxkbmap -layout us -option ctrl:nocaps
 '\bc'     buffer close
 ```
 
-### nerdtree key mappings
-```
+## nerdtree key mappings
+
+```shell
 '\n'      toggle nerdtree
 ```
 
-### fzf key mappings
-```
+## fzf key mappings
+
+```shell
 '\ff'     fuzzy find files
 '\fc'     fuzzy find git commits
 ```
 
-### ripgrep commands
-```
+## ripgrep commands
+
+```shell
 ':Rg'     <string|pattern>
 ':RgRoot' show root search dir
 ```
 
-### vim bookmarks commands
-```
+## vim bookmarks commands
+
+```shell
 'mm'   Add/remove bookmark at current line
 'mi'   Add/edit/remove annotation at current line
 'mn'   Jump to next bookmark in buffer
@@ -164,8 +194,10 @@ setxkbmap -layout us -option ctrl:nocaps
 'mc'   Clear bookmarks in current buffer only
 'mx'   Clear bookmarks in all buffers
 ```
-### vim test commands
-```
+
+## vim test commands
+
+```shell
 '\tn'  Run the test nearest to the cursor
 '\tf'  Run all tests in the current file
 '\ts'  Run the whole test suite
@@ -173,16 +205,18 @@ setxkbmap -layout us -option ctrl:nocaps
 '\tv'  Visit the test file from which you last ran your tests
 ```
 
-### vim session commands
-```
+## vim session commands
+
+```shell
 '\ss'  Start a session
 '\sr'  Restore a session
 '\sp'  Pause a session
 '\sx'  Destroy a session
 ```
 
-### JSON Tools
-```
+## JSON Tools
+
+```shell
 :PrettyPrintJSON  Prettify JSON
 :PrettyJSON       Alias to above
 :PrettyJson       Alias to above
@@ -190,7 +224,8 @@ setxkbmap -layout us -option ctrl:nocaps
 :FormatJson       Alias to above
 ```
 
-# resources
+## resources
+
 * [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
@@ -211,3 +246,4 @@ setxkbmap -layout us -option ctrl:nocaps
 * [CamelCaseMotion](https://github.com/bkad/CamelCaseMotion)
 * [vim-test](https://github.com/vim-test/vim-test)
 * [vim-obsession](https://github.com/tpope/vim-obsession)
+* [indentline](https://github.com/Yggdroot/indentLine)

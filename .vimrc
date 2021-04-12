@@ -127,6 +127,9 @@ nnoremap <Leader>rtw :call TrimWhiteSpace()<CR>
 " When vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
+" yaml requires 2 space indenting
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " Show (partial) command in the status line
 set showcmd
 
@@ -225,6 +228,8 @@ else
 endif
 set statusline+=%{gutentags#statusline()}
 
+" --- indentline ---
+let g:indentLine_char = '⦙'
 
 " --- CamelCaseMotion ---
 let g:camelcasemotion_key = '<leader>'
