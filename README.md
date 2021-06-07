@@ -11,7 +11,7 @@
 use pathogen for installing plugins and runtime files.
 
 ```shell
-mkdir -p ~/.vim/autoload ~/.vim/backup ~/.vim/bundle
+mkdir -p ~/.vim/autoload ~/.vim/backup ~/.vim/bundle ~/.vim/colors
 git clone https://github.com/tpope/vim-pathogen.git
 cp vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
 ```
@@ -55,6 +55,11 @@ git clone https://github.com/bkad/CamelCaseMotion.git ~/.vim/bundle/CamelCaseMot
 git clone https://github.com/vim-test/vim-test.git  ~/.vim/bundle/vim-test &&
 git clone https://github.com/tpope/vim-obsession.git  ~/.vim/bundle/vim-obsession
 git clone https://github.com/Yggdroot/indentLine.git ~/.vim/bundle/indentLine
+```
+
+## install solarized colors
+```
+mv ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors
 ```
 
 ## generate documentation
