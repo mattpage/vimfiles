@@ -53,17 +53,20 @@ git clone https://github.com/tpope/vim-rhubarb.git ~/.vim/bundle/vim-rhubarb &&
 git clone https://github.com/MattesGroeger/vim-bookmarks.git ~/.vim/bundle/vim-bookmarks &&
 git clone https://github.com/bkad/CamelCaseMotion.git ~/.vim/bundle/CamelCaseMotion &&
 git clone https://github.com/vim-test/vim-test.git  ~/.vim/bundle/vim-test &&
-git clone https://github.com/tpope/vim-obsession.git  ~/.vim/bundle/vim-obsession
-git clone https://github.com/Yggdroot/indentLine.git ~/.vim/bundle/indentLine
+git clone https://github.com/tpope/vim-obsession.git  ~/.vim/bundle/vim-obsession &&
+git clone https://github.com/Yggdroot/indentLine.git ~/.vim/bundle/indentLine &&
+git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 ```
 
 ## install solarized colors
+
 ```
 mv ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors
 ```
 
 ## generate documentation
 
+In vim, type
 ```shell
 :Helptags
 ```
@@ -130,6 +133,13 @@ brew brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 #linux
 sudo apt install universal-ctags
+```
+
+## go binaries
+
+In vim, type
+```
+:GoInstallBinaries
 ```
 
 ## remap capslock
