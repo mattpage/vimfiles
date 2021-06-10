@@ -262,3 +262,4 @@ setxkbmap -layout us -option ctrl:nocaps
 * [vim-test](https://github.com/vim-test/vim-test)
 * [vim-obsession](https://github.com/tpope/vim-obsession)
 * [indentline](https://github.com/Yggdroot/indentLine)
+* [vim-go](https://github.com/fatih/vim-go)
