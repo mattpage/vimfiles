@@ -183,8 +183,11 @@ map <Leader>tv :TestVisit<CR>
 " --- ALE ---
 let g:ale_ruby_rubocop_executable = 'bin/rubocop'
 
-let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
-let g:ale_fixers = { 'javascript': ['prettier-eslint', 'eslint'], 'typescript': ['prettier-eslint', 'eslint'], 'typescriptreact': ['prettier-eslint', 'eslint'], 'ruby': ['rubocop'] }
+" only enable explicitly defined linters below
+let g:ale_linters_explicit = 1
+
+let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop'], 'go': ['gopls']}
+let g:ale_fixers = { 'javascript': ['prettier-eslint', 'eslint'], 'typescript': ['prettier-eslint', 'eslint'], 'typescriptreact': ['prettier-eslint', 'eslint'], 'ruby': ['rubocop'], 'go': ['gofmt'] }
 let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
 
 " use rubocop if there's a config for it
@@ -215,6 +218,53 @@ let g:javascript_plugin_jsdoc = 0
 " --- vim-jsx ---
 " jsx extension is not required for syntax highlighting and indenting
 let g:jsx_ext_required = 0
+
+" --- vim-go ---
+
+" disable all the things that ale will handle
+let g:go_diagnostics_enabled = 0
+let g:go_diagnostics_level = 0
+let g:go_metalinter_enabled = []
+let g:go_gopls_enabled = 0
+
+" Highlight struct and interface names.
+let g:go_highlight_types = 1
+
+" Highlight struct field names.
+let g:go_highlight_fields = 1
+
+" Highlight function and method declarations.
+let g:go_highlight_functions = 1
+
+" Highlight function and method calls.
+let g:go_highlight_function_calls = 1
+
+" Highlight operators such as `:=` , `==`, `-=`, etc.
+let g:go_highlight_operators = 1
+
+" Highlight commonly used library types (`io.Reader`, etc.).
+let g:go_highlight_extra_types = 1
+
+" Highlights build constraints.
+let g:go_highlight_build_constraints = 1
+
+" Highlight go:generate directives.
+let g:go_highlight_generate_tags = 1
+
+" Highlight printf-style formatting verbs inside string literals.
+let g:go_highlight_format_strings = 1
+
+" Highlight variable names in variable declarations (`x` in ` x :=`).
+let g:go_highlight_variable_declarations = 1
+
+" Highlight variable names in variable assignments (`x` in `x =`).
+let g:go_highlight_variable_assignments = 1
+
+" Highlight diagnostic errors.
+let g:go_highlight_diagnostic_errors = 1
+
+" Highlight diagnostic warnings.
+let g:go_highlight_diagnostic_warnings = 1
 
 " --- vim-gutentags ---
 if filereadable('/usr/local/Cellar/universal-ctags/HEAD-5d000b1/bin')
