@@ -186,8 +186,8 @@ let g:ale_ruby_rubocop_executable = 'bin/rubocop'
 " only enable explicitly defined linters below
 let g:ale_linters_explicit = 1
 
-let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop'], 'go': ['gopls']}
-let g:ale_fixers = { 'javascript': ['prettier-eslint', 'eslint'], 'typescript': ['prettier-eslint', 'eslint'], 'typescriptreact': ['prettier-eslint', 'eslint'], 'ruby': ['rubocop'], 'go': ['gofmt'] }
+let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
+let g:ale_fixers = { 'javascript': ['prettier-eslint', 'eslint'], 'typescript': ['prettier-eslint', 'eslint'], 'typescriptreact': ['prettier-eslint', 'eslint'], 'ruby': ['rubocop']}
 let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
 
 " use rubocop if there's a config for it
@@ -220,12 +220,8 @@ let g:javascript_plugin_jsdoc = 0
 let g:jsx_ext_required = 0
 
 " --- vim-go ---
-
-" disable all the things that ale will handle
-let g:go_diagnostics_enabled = 0
-let g:go_diagnostics_level = 0
-let g:go_metalinter_enabled = []
-let g:go_gopls_enabled = 0
+" use the gopls language server
+let g:go_gopls_enabled = 1
 
 " Highlight struct and interface names.
 let g:go_highlight_types = 1
