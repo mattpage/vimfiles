@@ -129,7 +129,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 
 ```shell
 #macos
-brew brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 #linux
 sudo apt install universal-ctags
