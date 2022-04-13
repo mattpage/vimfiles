@@ -45,7 +45,7 @@ set number
 "  add a line / column display in the bottom right-hand section of the screen.
 set ruler
 
-# automatic regex engine selection
+" automatic regex engine selection
 set re=0
 
 " --- Whitespace stuff ---
