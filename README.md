@@ -2,18 +2,17 @@
 
 ## requirements
 
-* Vim 8+ with scripting support
-* Node.js
+* neovim
 * Homebrew or Linuxbrew
 
-## install pathogen
+## install vim-plug
 
-use pathogen for installing plugins and runtime files.
+use vim-plug for installing plugins and runtime files.
 
 ```shell
 mkdir -p ~/.vim/autoload ~/.vim/backup ~/.vim/bundle ~/.vim/colors
-git clone https://github.com/tpope/vim-pathogen.git
-cp vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
+cp -r ./vim/ ~/.vim/
+cp -r ./config/ ~/.config/
 ```
 
 ## install dotfiles
@@ -32,44 +31,7 @@ brew install reattach-to-user-namespace
 ```
 
 ## install vim plugins
-
-```shell
-git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized &&
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree &&
-git clone https://github.com/vim-scripts/bufexplorer.zip.git ~/.vim/bundle/bufexplorer.zip &&
-git clone https://github.com/rbgrouleff/bclose.vim.git ~/.vim/bundle/bclose.vim &&
-git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale &&
-git clone https://github.com/junegunn/fzf.vim ~/.vim/bundle/fzf.vim &&
-git clone https://github.com/jremmen/vim-ripgrep.git ~/.vim/bundle/vim-ripgrep &&
-git clone https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commentary &&
-git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript &&
-git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx &&
-git clone https://github.com/ajh17/VimCompletesMe.git ~/.vim/bundle/VimCompletesMe &&
-git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-gutentags &&
-git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim &&
-git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails &&
-git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive &&
-git clone https://github.com/tpope/vim-rhubarb.git ~/.vim/bundle/vim-rhubarb &&
-git clone https://github.com/MattesGroeger/vim-bookmarks.git ~/.vim/bundle/vim-bookmarks &&
-git clone https://github.com/bkad/CamelCaseMotion.git ~/.vim/bundle/CamelCaseMotion &&
-git clone https://github.com/vim-test/vim-test.git  ~/.vim/bundle/vim-test &&
-git clone https://github.com/tpope/vim-obsession.git  ~/.vim/bundle/vim-obsession &&
-git clone https://github.com/Yggdroot/indentLine.git ~/.vim/bundle/indentLine &&
-git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
-```
-
-## install solarized colors
-
-```
-mv ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors
-```
-
-## generate documentation
-
-In vim, type
-```shell
-:Helptags
-```
+Open nvim and run `:PlugInstall`
 
 ## ale linting support
 
@@ -210,16 +172,6 @@ setxkbmap -layout us -option ctrl:nocaps
 'mx'   Clear bookmarks in all buffers
 ```
 
-## vim test commands
-
-```shell
-'\tn'  Run the test nearest to the cursor
-'\tf'  Run all tests in the current file
-'\ts'  Run the whole test suite
-'\tl'  Run the last test
-'\tv'  Visit the test file from which you last ran your tests
-```
-
 ## vim session commands
 
 ```shell
@@ -241,25 +193,23 @@ setxkbmap -layout us -option ctrl:nocaps
 
 ## resources
 
-* [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
-* [nerdtree](https://github.com/scrooloose/nerdtree)
-* [bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
-* [bclose](https://github.com/rbgrouleff/bclose.vim)
 * [ale](https://github.com/w0rp/ale)
-* [fzf.vim](https://github.com/junegunn/fzf.vim)
-* [vim-ripgrep](https://github.com/jremmen/vim-ripgrep)
-* [vim-commentary](https://github.com/tpope/vim-commentary)
-* [vim-javascript](https://github.com/pangloss/vim-javascript)
-* [vim-jsx](https://github.com/mxw/vim-jsx)
-* [vimcompletesme](https://github.com/ajh17/VimCompletesMe)
-* [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags.git)
-* [lightline](https://github.com/itchyny/lightline.vim)
-* [vim-rails](https://github.com/tpope/vim-rails)
-* [vim-fugitive](https://github.com/tpope/vim-fugitive)
-* [vim-rhubarb](https://github.com/tpope/vim-rhubarb)
-* [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks)
+* [bclose](https://github.com/rbgrouleff/bclose.vim)
+* [bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
 * [CamelCaseMotion](https://github.com/bkad/CamelCaseMotion)
-* [vim-test](https://github.com/vim-test/vim-test)
-* [vim-obsession](https://github.com/tpope/vim-obsession)
+* [fzf.vim](https://github.com/junegunn/fzf.vim)
 * [indentline](https://github.com/Yggdroot/indentLine)
+* [lightline](https://github.com/itchyny/lightline.vim)
+* [nerdtree](https://github.com/scrooloose/nerdtree)
+* [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks)
+* [vim-commentary](https://github.com/tpope/vim-commentary)
+* [vimcompletesme](https://github.com/ajh17/VimCompletesMe)
+* [vim-fugitive](https://github.com/tpope/vim-fugitive)
 * [vim-go](https://github.com/fatih/vim-go)
+* [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags.git)
+* [vim-javascript](https://github.com/pangloss/vim-javascript)
+* [vim-obsession](https://github.com/tpope/vim-obsession)
+* [vim-rails](https://github.com/tpope/vim-rails)
+* [vim-rhubarb](https://github.com/tpope/vim-rhubarb)
+* [vim-ripgrep](https://github.com/jremmen/vim-ripgrep)
+* [vim-solarized8](https://github.com/lifepillar/vim-solarized8)

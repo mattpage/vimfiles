@@ -1,15 +1,38 @@
-execute pathogen#infect()
-
 " This option stops vim from behaving in a strongly vi -compatible way.
 set nocompatible
+
+call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'itchyny/lightline.vim'
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'bkad/CamelCaseMotion'
+Plug 'Yggdroot/indentLine'
+Plug 'ojroques/vim-oscyank'
+Plug 'lifepillar/vim-solarized8'
+Plug 'w0rp/ale'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-rhubarb'
+call plug#end()
 
 " turn on syntax highlighting
 syntax enable
 
-" solarized colors - background=dark|light
+" setup theme
+set termguicolors
+colorscheme solarized8_high
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+autocmd vimenter * ++nested colorscheme solarized8_high
 
 " change cursor based on mode
 if $TERM_PROGRAM =~ "iTerm"
@@ -44,9 +67,6 @@ set number
 
 "  add a line / column display in the bottom right-hand section of the screen.
 set ruler
-
-" automatic regex engine selection
-set re=0
 
 " --- Whitespace stuff ---
 set nowrap
@@ -151,20 +171,20 @@ nnoremap <esc><esc> :nohl<cr>
 
 " Map Ctrl+Y and Ctrl+E to move Quarter page up/down respectively
 " this overrides normal view scrolling behavior, but I never use that
-function! ScrollQuarter(move)
-  let height=winheight(0)
+" function! ScrollQuarter(move)
+"   let height=winheight(0)
 
-  if a:move == 'up'
-    let key="k"
-  else
-    let key="j"
-  endif
+"   if a:move == 'up'
+"     let key="k"
+"   else
+"     let key="j"
+"   endif
 
-  execute 'normal! ' . height/4 . key
-endfunction
+"   execute 'normal! ' . height/4 . key
+" endfunction
 
-nnoremap <C-Y> <up> :call ScrollQuarter('up')<CR>
-nnoremap <C-E> <down> :call ScrollQuarter('down')<CR>
+" nnoremap <C-Y> <up> :call ScrollQuarter('up')<CR>
+" nnoremap <C-E> <down> :call ScrollQuarter('down')<CR>
 
 " --- NERDTree ---
 map <Leader>n :NERDTreeToggle<CR>
@@ -175,13 +195,13 @@ map <Leader>bb :bprevious<cr>
 map <Leader>bc :Bclose<cr>
 
 " --- vim-test ---
-let test#strategy = "vimterminal"
+" let test#strategy = "vimterminal"
 
-map <Leader>tn :TestNearest<CR>
-map <Leader>tf :TestFile<CR>
-map <Leader>ts :TestSuite<CR>
-map <Leader>tl :TestLast<CR>
-map <Leader>tv :TestVisit<CR>
+" map <Leader>tn :TestNearest<CR>
+" map <Leader>tf :TestFile<CR>
+" map <Leader>ts :TestSuite<CR>
+" map <Leader>tl :TestLast<CR>
+" map <Leader>tv :TestVisit<CR>
 
 " --- ALE ---
 let g:ale_ruby_rubocop_executable = 'bin/rubocop'
@@ -212,7 +232,7 @@ map <Leader>ff :Files<CR>
 map <Leader>fc :Commits<CR>
 
 "--- vim-commentary ---
-map <leader>c gc
+map <leader>c gc<CR>
 
 "--- vim-javascript ---
 " do not syntax highlight jsdocs
@@ -309,6 +329,9 @@ command! PrettyJson PrettyPrintJSON
 command! FormatJSON PrettyPrintJSON
 command! FormatJson PrettyPrintJSON
 
-" --- copy file path of current buffer to clipboard ---
-nnoremap <leader>cp :!echo -n % \| pbcopy<cr>
+" " --- yank text in visual mode using the ANSI OSC52 sequence ---
+vnoremap <leader>y :OSCYank<CR>
+vnoremap yy :OSCYank<CR>
 
+" --- copy file path of current buffer to clipboard ---
+nnoremap <leader>cp :let @" = expand("%")<cr>:OSCYankReg "<CR>
