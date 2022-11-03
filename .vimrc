@@ -18,6 +18,8 @@ Plug 'ojroques/vim-oscyank'
 Plug 'lifepillar/vim-solarized8'
 Plug 'w0rp/ale'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'ajh17/VimCompletesMe'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -209,8 +211,8 @@ let g:ale_ruby_rubocop_executable = 'bin/rubocop'
 " only enable explicitly defined linters below
 let g:ale_linters_explicit = 1
 
-let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
-let g:ale_fixers = { 'javascript': ['prettier-eslint', 'eslint'], 'typescript': ['prettier-eslint', 'eslint'], 'typescriptreact': ['prettier-eslint', 'eslint'], 'ruby': ['rubocop']}
+let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop'], 'go': ['gopls']}
+let g:ale_fixers = { 'javascript': ['prettier-eslint', 'eslint'], 'typescript': ['prettier-eslint', 'eslint'], 'typescriptreact': ['prettier-eslint', 'eslint'], 'ruby': ['rubocop'], 'go': ['gofumpt']}
 let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
 
 " use rubocop if there's a config for it
@@ -221,6 +223,10 @@ endif
 
 " fix files automatically on save.
 let g:ale_fix_on_save = 1
+
+" ale go completion
+let g:ale_go_langserver_executable = ''
+let g:ale_completion_enabled = 0
 
 "--- FZF ---
 set rtp+=~/.fzf
@@ -245,6 +251,8 @@ let g:jsx_ext_required = 0
 " --- vim-go ---
 " use the gopls language server
 let g:go_gopls_enabled = 1
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " Highlight struct and interface names.
 let g:go_highlight_types = 1
@@ -323,7 +331,7 @@ nnoremap <Leader>sx :Obsession!<CR>
 runtime macros/matchit.vim
 
 " --- pretty print json using python
-command! PrettyPrintJSON %!python -m json.tool
+command! PrettyPrintJSON %!python3 -m json.tool
 command! PrettyJSON PrettyPrintJSON
 command! PrettyJson PrettyPrintJSON
 command! FormatJSON PrettyPrintJSON
