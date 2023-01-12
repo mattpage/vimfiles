@@ -255,7 +255,7 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
 " Use a popup window for Shift+K and :GoDoc rather than preview window
-let g:go_doc_popup_window = 0
+let g:go_doc_popup_window = 1
 
 " Highlight struct and interface names.
 let g:go_highlight_types = 1
