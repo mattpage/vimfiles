@@ -18,7 +18,7 @@ Plug 'ojroques/vim-oscyank'
 Plug 'lifepillar/vim-solarized8'
 Plug 'w0rp/ale'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'ajh17/VimCompletesMe'
+Plug 'vim-scripts/VimCompletesMe'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
