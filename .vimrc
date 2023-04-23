@@ -142,13 +142,6 @@ endfunction
 nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 nnoremap <Leader>rtw :call TrimWhiteSpace()<CR>
 
-" if has("autocmd")
-"   autocmd FileWritePre    * :call TrimWhiteSpace()
-"   autocmd FileAppendPre   * :call TrimWhiteSpace()
-"   autocmd FilterWritePre  * :call TrimWhiteSpace()
-"   autocmd BufWritePre     * :call TrimWhiteSpace()
-" endif
-
 " When vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
@@ -171,23 +164,6 @@ vnoremap v <esc>
 " unhilight on escape escape
 nnoremap <esc><esc> :nohl<cr>
 
-" Map Ctrl+Y and Ctrl+E to move Quarter page up/down respectively
-" this overrides normal view scrolling behavior, but I never use that
-" function! ScrollQuarter(move)
-"   let height=winheight(0)
-
-"   if a:move == 'up'
-"     let key="k"
-"   else
-"     let key="j"
-"   endif
-
-"   execute 'normal! ' . height/4 . key
-" endfunction
-
-" nnoremap <C-Y> <up> :call ScrollQuarter('up')<CR>
-" nnoremap <C-E> <down> :call ScrollQuarter('down')<CR>
-
 " --- NERDTree ---
 map <Leader>n :NERDTreeToggle<CR>
 
@@ -195,15 +171,6 @@ map <Leader>n :NERDTreeToggle<CR>
 map <Leader>bf :bnext<cr>
 map <Leader>bb :bprevious<cr>
 map <Leader>bc :Bclose<cr>
-
-" --- vim-test ---
-" let test#strategy = "vimterminal"
-
-" map <Leader>tn :TestNearest<CR>
-" map <Leader>tf :TestFile<CR>
-" map <Leader>ts :TestSuite<CR>
-" map <Leader>tl :TestLast<CR>
-" map <Leader>tv :TestVisit<CR>
 
 " --- ALE ---
 let g:ale_ruby_rubocop_executable = 'bin/rubocop'

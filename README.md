@@ -91,13 +91,17 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 
 ```shell
 #macos
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+brew install universal-ctags
 
 #linux
 sudo apt install universal-ctags
 ```
 
-## go binaries
+## go
+
+```shell
+brew install go
+```
 
 In vim, type
 ```
@@ -121,9 +125,7 @@ setxkbmap -layout us -option ctrl:nocaps
 'esc+esc' no highlight
 '\s'      save
 'ctrl+d'  scroll down
-'ctrl+e'  scroll down 1/4 page
 'ctrl+u'  scroll up
-'ctrl+y'  scroll up 1/4 page
 \rtw      remove trailing whitespace
 \rts      remove trailing whitespace
 \cp       copy the file path of the current buffer to the clipboard
