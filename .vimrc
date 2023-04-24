@@ -264,10 +264,7 @@ let g:go_highlight_diagnostic_errors = 1
 let g:go_highlight_diagnostic_warnings = 1
 
 " --- vim-gutentags ---
-if filereadable('/usr/local/Cellar/universal-ctags/HEAD-5d000b1/bin')
-  " homebrew universal-ctags
-  let g:gutentags_ctags_executable = '/usr/local/Cellar/universal-ctags/HEAD-5d000b1/bin/ctags'
-elseif filereadable('/usr/local/bin/ctags')
+if filereadable('/usr/local/bin/ctags')
   " homebrew
   let g:gutentags_ctags_executable = '/usr/local/bin/ctags'
 else
