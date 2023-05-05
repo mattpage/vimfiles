@@ -31,7 +31,11 @@ syntax enable
 set termguicolors
 colorscheme solarized8_high
 set background=dark
-autocmd vimenter * ++nested colorscheme solarized8_high
+
+augroup SetSolarizedColorSchema
+  autocmd!
+  autocmd vimenter * ++nested colorscheme solarized8_high
+augroup END
 
 " change cursor based on mode
 if $TERM_PROGRAM =~ "iTerm"
@@ -140,14 +144,14 @@ nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 nnoremap <Leader>rtw :call TrimWhiteSpace()<CR>
 
 augroup ReloadVimrcAfterEdit
-  autocmd! " remove all auto-commands from this group
+  autocmd!
 
   " When vimrc is edited, reload it
   autocmd bufwritepost .vimrc source ~/.vimrc
 augroup END
 
 augroup SetYamlIndent
-  autocmd! " remove all auto-commands from this group
+  autocmd!
 
   " yaml requires 2 space indenting
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
