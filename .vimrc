@@ -73,10 +73,15 @@ set ruler
 
 " --- Whitespace stuff ---
 set nowrap
-set tabstop=8
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
+
+augroup SetGoWhitespace
+   autocmd!
+   autocmd filetype go setlocal noexpandtab
+augroup end
 
 " backspace should delete over line breaks and such
 set backspace=indent,eol,start
