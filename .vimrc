@@ -219,7 +219,7 @@ nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>fc :Commits<CR>
 
 "--- vim-commentary ---
-nnoremap <leader>c gc<CR>
+nmap <leader>c gc<CR>
 
 "--- vim-javascript ---
 " do not syntax highlight jsdocs
@@ -323,4 +323,4 @@ vnoremap <leader>y :OSCYankVisual<CR>
 vnoremap yy :OSCYankVisual<CR>
 
 " --- copy file path of current buffer to clipboard ---
-nnoremap <leader>cp :let @" = expand("%")<cr>:OSCYankRegister "<CR>
+nnoremap <leader>cp :let @" = expand("%")<cr>:OSCYankReg "<CR>
