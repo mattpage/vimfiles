@@ -136,6 +136,10 @@ set backupcopy=yes
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
+" map ]q and [q to cnext and cprev in quickfix
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprev<CR>
+
 " highlight trailing whitespace as errors
 match ErrorMsg '\s\+$'
 
@@ -323,4 +327,4 @@ vnoremap <leader>y :OSCYankVisual<CR>
 vnoremap yy :OSCYankVisual<CR>
 
 " --- copy file path of current buffer to clipboard ---
-nnoremap <leader>cp :let @" = expand("%")<cr>:OSCYankReg "<CR>
+nnoremap <leader>cp :let @" = expand("%")<cr>:OSCYankRegister "<CR>
