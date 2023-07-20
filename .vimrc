@@ -180,7 +180,7 @@ vnoremap v <esc>
 
 " NOTE: single escape causes vim to start in insert mode on debian9.
 " unhilight on escape escape
-nnoremap <esc><esc> :nohl<cr>
+noremap <esc><esc> :nohl<cr>
 
 " --- NERDTree ---
 nnoremap <Leader>n :NERDTreeToggle<CR>
