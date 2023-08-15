@@ -239,6 +239,9 @@ let g:go_gopls_enabled = 1
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
+" Specifies the type of list to use for command outputs (such as errors from builds, results from static analysis commands, etc...
+let g:go_list_type="quickfix"
+
 " Use a popup window for Shift+K and :GoDoc rather than preview window
 let g:go_doc_popup_window = 1
 
@@ -292,6 +295,7 @@ set statusline+=%{gutentags#statusline()}
 
 " --- indentline ---
 let g:indentLine_char = '⦙'
+let g:indentLine_fileTypeExclude = ['json']
 
 " --- CamelCaseMotion ---
 let g:camelcasemotion_key = '<leader>'
