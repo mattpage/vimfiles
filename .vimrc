@@ -28,6 +28,11 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-rhubarb'
 call plug#end()
 
+" make sure homebrew binaries are in the PATH if they exist
+if isdirectory('/opt/homebrew/bin') && $PATH !~# '/opt/homebrew/bin'
+    let $PATH = '/opt/homebrew/bin:' . $PATH
+endif
+
 " turn on syntax highlighting
 syntax enable
 
@@ -137,6 +142,9 @@ set foldlevel=1
 set backupcopy=yes
 
 " Directories for swp files
+if !isdirectory(expand('~/.vim/backup'))
+    call mkdir(expand('~/.vim/backup'), 'p')
+endif
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
@@ -195,13 +203,38 @@ nnoremap <Leader>bb :bprevious<cr>
 nnoremap <Leader>bc :Bclose<cr>
 
 " --- ALE ---
-let g:ale_ruby_rubocop_executable = 'bin/rubocop'
+
+if isdirectory('bin/rubocop')
+  let g:ale_ruby_rubocop_executable = 'bin/rubocop'
+else
+  let g:ale_ruby_rubocop_executable = 'rubocop'
+endif
 
 " only enable explicitly defined linters below
 let g:ale_linters_explicit = 1
 
-let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop'], 'go': ['gopls']}
-let g:ale_fixers = { 'javascript': ['prettier-eslint', 'eslint'], 'typescript': ['prettier-eslint', 'eslint'], 'typescriptreact': ['prettier-eslint', 'eslint'], 'ruby': ['rubocop'], 'go': ['gofumpt']}
+let g:ale_fixers = {}
+let g:ale_c_cc_executable = 'clang'
+let g:ale_c_cppcheck_executable = 'cppcheck'
+
+let g:ale_linters = {
+\   'c': ['cc','cppcheck'],
+\   'cpp': ['cc','cppcheck'],
+\   'go': ['gopls'],
+\   'javascript': ['eslint'],
+\   'ruby': ['rubocop'],
+\}
+
+let g:ale_fixers = {
+\   'c': ['clang-format','remove_trailing_lines','trim_whitespace'],
+\   'cpp': ['clang-format','remove_trailing_lines','trim_whitespace'],
+\   'go': ['gofumpt'],
+\   'javascript': ['prettier-eslint', 'eslint'],
+\   'ruby': ['rubocop'],
+\   'typescript': ['prettier-eslint', 'eslint'],
+\   'typescriptreact': ['prettier-eslint', 'eslint'],
+\}
+
 let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
 
 " use rubocop if there's a config for it
@@ -210,12 +243,11 @@ if filereadable(".rubocop.yml")
   let g:ale_fixers.ruby = ['rubocop']
 endif
 
-" fix files automatically on save.
-let g:ale_fix_on_save = 1
-
-" ale go completion
 let g:ale_go_langserver_executable = ''
 let g:ale_completion_enabled = 0
+
+" fix files automatically on save.
+let g:ale_fix_on_save = 1
 
 "--- FZF ---
 set rtp+=~/.fzf
@@ -289,12 +321,7 @@ let g:go_highlight_diagnostic_errors = 1
 let g:go_highlight_diagnostic_warnings = 1
 
 " --- vim-gutentags ---
-if filereadable('/usr/local/bin/ctags')
-  " homebrew
-  let g:gutentags_ctags_executable = '/usr/local/bin/ctags'
-else
-  let g:gutentags_ctags_executable = 'ctags'
-endif
+let g:gutentags_ctags_executable = 'ctags'
 set statusline+=%{gutentags#statusline()}
 
 " --- indentline ---
@@ -305,7 +332,10 @@ let g:indentLine_fileTypeExclude = ['json']
 let g:camelcasemotion_key = '<leader>'
 
 " --- vim-obsession ---
-let g:sessions_dir = '~/vim-sessions'
+if !isdirectory(expand('~/.vim/sessions'))
+    call mkdir(expand('~/.vim/sessions'), 'p')
+endif
+let g:sessions_dir = expand('~/.vim/sessions')
 
 " start session - displays listing of existing session files.
 "                 BS are to delete the  *.vim part after typing it.

@@ -72,6 +72,13 @@ setxkbmap -layout us -option ctrl:nocaps
 
 ## language support
 
+### C/C++
+
+```shell
+brew install cppcheck
+brew install clang-format
+```
+
 ### go
 
 ```shell
@@ -112,6 +119,8 @@ brew install yamllint
 '\rtw'    remove trailing whitespace
 '\rts'    remove trailing whitespace
 '\cp'     copy the file path of the current buffer to the clipboard
+']q'      next item in quickfix
+'[q'      prev item in quickfix
 ```
 
 ### bufexplorer key mappings
