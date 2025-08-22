@@ -22,46 +22,10 @@ cp .vimrc ~
 cp .ctags ~
 ```
 
-## reattach-to-user-namespace
-
-for system clipboard access on macos
-
-```shell
-brew install reattach-to-user-namespace
-```
-
 ## install vim plugins
 Open nvim and run `:PlugInstall`
 
-## ale linting support
-
-Ale is an asynchronous linting engine.
-
-Install eslint in your local project (or globally)
-and setup a default eslint config for ale to use
-
-```shell
-npm install eslint --save-dev
-eslint --init
-```
-
-it also supports prettier!
-
-Install prettier-eslint in your project (or globally)
-
-```shell
-npm install prettier-eslint --save-dev
-```
-
-For ruby linting, make sure rubocop is on your path.
-
-For yaml linting, you need to install `yamlint`
-
-```shell
-brew install yamllint
-```
-
-## fzf
+## install fzf and ripgrep
 
 fzf is a command-line fuzzy finder.
 It is a replacement for ctrl+p.
@@ -87,7 +51,7 @@ then add the following to ~/.fzf.bash or ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,coverage}/*" 2> /dev/null'
 ```
 
-## ctags
+## install ctags
 
 ```shell
 #macos
@@ -95,17 +59,6 @@ brew install universal-ctags
 
 #linux
 sudo apt install universal-ctags
-```
-
-## go
-
-```shell
-brew install go
-```
-
-In vim, type
-```
-:GoInstallBinaries
 ```
 
 ## remap capslock
@@ -117,7 +70,37 @@ To map capslock to ctrl, add this to .bashrc
 setxkbmap -layout us -option ctrl:nocaps
 ```
 
-## key mappings
+## language support
+
+### go
+
+```shell
+brew install go
+```
+
+In vim, type
+```
+:GoInstallBinaries
+```
+
+### javascript
+
+```shell
+npm install eslint --save-dev
+eslint --init
+npm install prettier-eslint --save-dev
+```
+
+### ruby
+For ruby linting, make sure rubocop is on your path.
+
+### yaml
+
+```shell
+brew install yamllint
+```
+
+## key mappings and commands
 
 ```shell
 'jj'      leave insert mode (same as esc)
@@ -131,7 +114,7 @@ setxkbmap -layout us -option ctrl:nocaps
 \cp       copy the file path of the current buffer to the clipboard
 ```
 
-## bufexplorer key mappings
+### bufexplorer key mappings
 
 ```shell
 '\be'     open buffer explorer (normal)
@@ -142,27 +125,27 @@ setxkbmap -layout us -option ctrl:nocaps
 '\bc'     buffer close
 ```
 
-## nerdtree key mappings
+### nerdtree key mappings
 
 ```shell
 '\n'      toggle nerdtree
 ```
 
-## fzf key mappings
+### fzf key mappings
 
 ```shell
 '\ff'     fuzzy find files
 '\fc'     fuzzy find git commits
 ```
 
-## ripgrep commands
+### ripgrep commands
 
 ```shell
 ':Rg'     <string|pattern>
 ':RgRoot' show root search dir
 ```
 
-## vim bookmarks commands
+### vim bookmarks commands
 
 ```shell
 'mm'   Add/remove bookmark at current line
@@ -174,7 +157,7 @@ setxkbmap -layout us -option ctrl:nocaps
 'mx'   Clear bookmarks in all buffers
 ```
 
-## vim session commands
+### vim session commands
 
 ```shell
 '\ss'  Start a session
@@ -183,7 +166,7 @@ setxkbmap -layout us -option ctrl:nocaps
 '\sx'  Destroy a session
 ```
 
-## JSON Tools
+### JSON commands
 
 ```shell
 :PrettyPrintJSON  Prettify JSON

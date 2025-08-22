@@ -12,7 +12,11 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'bkad/CamelCaseMotion'
 Plug 'Yggdroot/indentLine'
 Plug 'ojroques/vim-oscyank'
-Plug 'lifepillar/vim-solarized8'
+if has('nvim')
+  Plug 'lifepillar/vim-solarized8', { 'branch': 'neovim' }
+else
+  Plug 'lifepillar/vim-solarized8'
+endif
 Plug 'w0rp/ale'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-scripts/VimCompletesMe'
