@@ -109,9 +109,9 @@ brew install yamllint
 '\s'      save
 'ctrl+d'  scroll down
 'ctrl+u'  scroll up
-\rtw      remove trailing whitespace
-\rts      remove trailing whitespace
-\cp       copy the file path of the current buffer to the clipboard
+'\rtw'    remove trailing whitespace
+'\rts'    remove trailing whitespace
+'\cp'     copy the file path of the current buffer to the clipboard
 ```
 
 ### bufexplorer key mappings
