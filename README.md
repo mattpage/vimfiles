@@ -135,15 +135,38 @@ brew install yamllint
 ### buffer and bufexplorer
 
 ```shell
-'\be'     open buffer explorer (normal)
-'\bs'     open buffer explorer (horiz split)
-'\bv'     open buffer explorer (vert split)
-'\bf'     buffer forward
-'\bb'     buffer back
-'\bn'     buffer next
-'\bp'     buffer previous
-'\bc'     buffer close - deletes buffer w/o closing window
-'\bd'     buffer delete - same as above
+'\be'       open buffer explorer (normal)
+'\bs'       open buffer explorer (horiz split)
+'\bv'       open buffer explorer (vert split)
+'\bf'       buffer forward
+'\bb'       buffer back
+'\bn'       buffer next
+'\bp'       buffer previous
+'\bc'       buffer close - deletes buffer w/o closing window
+'\bd'       buffer delete - same as above
+'\buf'      same as :buf commands below.
+':buf file' autocomplete filename with <Tab>
+':buf + n'  where n is the buffer number
+```
+
+### window commands
+
+```shell
+'Ctrl-W H'          Moves the cursor to the left window
+'Ctrl-W J'          Moves the cursor to the window below
+'Ctrl-W K'          Moves the cursor to the window upper
+'Ctrl-W L'          Moves the cursor to the right window
+'Ctrl-W V'          Opens a new vertical split
+'Ctrl-W S'          Opens a new horizontal split
+'Ctrl-W C'          Closes a window
+'Ctrl-W O'          Makes the current window the only one on screen and closes other windows
+'Ctrl-W V'          Opens a new vertical split
+'Ctrl-W S'          Opens a new horizontal split
+'Ctrl-W C'          Closes a window
+'Ctrl-W O'          Makes the current window the only one on screen and closes other windows
+':vsplit filename'  Split window vertically
+':split filename'   Split window horizontally
+':new filename'     Create new window
 ```
 
 ### nerdtree

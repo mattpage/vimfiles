@@ -205,6 +205,7 @@ nnoremap <Leader>bp :bprevious<cr>
 nnoremap <Leader>bb :bprevious<cr>
 nnoremap <Leader>bc :Bclose<cr>
 nnoremap <Leader>bd :bdelete<cr>
+nnoremap <silent> <Leader>buf :buffer
 
 " --- A.vim for header/source toggling --- "
 nnoremap <silent> <Leader>o :A<CR>
