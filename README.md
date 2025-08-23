@@ -143,8 +143,11 @@ brew install yamllint
 ### fzf key mappings
 
 ```shell
-'\ff'     fuzzy find files
+'\fb'     fuzzy find buffers
 '\fc'     fuzzy find git commits
+'\ff'     fuzzy find files
+'\fl'     fuzzy find lines
+'\ft'     fuzzy find tags
 ```
 
 ### ripgrep commands
