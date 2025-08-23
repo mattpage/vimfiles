@@ -258,6 +258,15 @@ nnoremap <Leader>ff :Files<CR>
 " map leader+fc to find commits
 nnoremap <Leader>fc :Commits<CR>
 
+" map leader+fb to fuzzy find buffers
+nnoremap <Leader>fb :Buffers<CR>
+
+" map leader+fl to fuzzy find lines
+nnoremap <Leader>fl :Lines<CR>
+
+" map leader+ft to fuzzy find tags
+nnoremap <Leader>ft :Tags<CR>
+
 "--- vim-commentary ---
 nmap <leader>c gc<CR>
 
