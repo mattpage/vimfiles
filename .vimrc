@@ -19,6 +19,7 @@ else
 endif
 Plug 'w0rp/ale'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/VimCompletesMe'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-rails'
@@ -204,6 +205,16 @@ nnoremap <Leader>bp :bprevious<cr>
 nnoremap <Leader>bb :bprevious<cr>
 nnoremap <Leader>bc :Bclose<cr>
 nnoremap <Leader>bd :bdelete<cr>
+
+" --- A.vim for header/source toggling --- "
+nnoremap <silent> <Leader>o :A<CR>
+
+" Options to open in split, vert-split, and tab
+nnoremap <silent> <Leader>os :AS<CR>
+nnoremap <silent> <Leader>ov :AV<CR>
+nnoremap <silent> <Leader>ot :AT<CR>
+
+let g:alternateSearchPath = 'src,include'
 
 " --- ALE ---
 

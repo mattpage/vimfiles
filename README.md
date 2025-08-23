@@ -123,6 +123,15 @@ brew install yamllint
 '[q'      prev item in quickfix
 ```
 
+### a.vim
+
+```shell
+'\o'    toggle between source and header file
+'\os'   toggle and open in a split
+'\ov'   toggle and open in a vertical split
+'\ot'   toggle and open in a tab
+```
+
 ### buffer and bufexplorer
 
 ```shell
@@ -200,6 +209,7 @@ brew install yamllint
 ## resources
 
 * [ale](https://github.com/w0rp/ale)
+* [a.vim](https://github.com/vim-scripts/a.vim)
 * [bclose](https://github.com/rbgrouleff/bclose.vim)
 * [bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
 * [CamelCaseMotion](https://github.com/bkad/CamelCaseMotion)
