@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -332,6 +333,9 @@ let g:go_highlight_diagnostic_warnings = 1
 " --- vim-gutentags ---
 let g:gutentags_ctags_executable = 'ctags'
 set statusline+=%{gutentags#statusline()}
+
+" --- tagbar ---
+noremap <leader>tt :TagbarToggle<CR>
 
 " --- indentline ---
 let g:indentLine_char = '⦙'

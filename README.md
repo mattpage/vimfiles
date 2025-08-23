@@ -140,6 +140,10 @@ brew install yamllint
 '\n'      toggle nerdtree
 ```
 
+### tagbar
+'\tt' Toggle Tagbar
+
+
 ### fzf key mappings
 
 ```shell
