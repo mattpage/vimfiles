@@ -123,18 +123,21 @@ brew install yamllint
 '[q'      prev item in quickfix
 ```
 
-### bufexplorer key mappings
+### buffer and bufexplorer
 
 ```shell
 '\be'     open buffer explorer (normal)
 '\bs'     open buffer explorer (horiz split)
 '\bv'     open buffer explorer (vert split)
 '\bf'     buffer forward
-'\bb'     buffer backwards
-'\bc'     buffer close
+'\bb'     buffer back
+'\bn'     buffer next
+'\bp'     buffer previous
+'\bc'     buffer close - deletes buffer w/o closing window
+'\bd'     buffer delete - same as above
 ```
 
-### nerdtree key mappings
+### nerdtree
 
 ```shell
 '\n'      toggle nerdtree
@@ -146,7 +149,7 @@ brew install yamllint
 '\tt' Toggle Tagbar
 ```
 
-### fzf key mappings
+### fzf
 
 ```shell
 '\fb'     fuzzy find buffers
@@ -156,14 +159,14 @@ brew install yamllint
 '\ft'     fuzzy find tags
 ```
 
-### ripgrep commands
+### ripgrep
 
 ```shell
 ':Rg'     <string|pattern>
 ':RgRoot' show root search dir
 ```
 
-### vim bookmarks commands
+### bookmarks
 
 ```shell
 'mm'   Add/remove bookmark at current line
@@ -175,7 +178,7 @@ brew install yamllint
 'mx'   Clear bookmarks in all buffers
 ```
 
-### vim session commands
+### session commands
 
 ```shell
 '\ss'  Start a session

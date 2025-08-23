@@ -198,9 +198,12 @@ noremap <esc><esc> :nohl<cr>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " --- Buffer switching ---
+nnoremap <Leader>bn :bnext<cr>
 nnoremap <Leader>bf :bnext<cr>
+nnoremap <Leader>bp :bprevious<cr>
 nnoremap <Leader>bb :bprevious<cr>
 nnoremap <Leader>bc :Bclose<cr>
+nnoremap <Leader>bd :bdelete<cr>
 
 " --- ALE ---
 
