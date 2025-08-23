@@ -7,7 +7,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'itchyny/lightline.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'bkad/CamelCaseMotion'
@@ -274,10 +273,6 @@ nmap <leader>c gc<CR>
 "--- vim-javascript ---
 " do not syntax highlight jsdocs
 let g:javascript_plugin_jsdoc = 0
-
-" --- vim-jsx ---
-" jsx extension is not required for syntax highlighting and indenting
-let g:jsx_ext_required = 0
 
 " --- vim-go ---
 " use the gopls language server

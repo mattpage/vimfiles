@@ -141,8 +141,10 @@ brew install yamllint
 ```
 
 ### tagbar
-'\tt' Toggle Tagbar
 
+```shell
+'\tt' Toggle Tagbar
+```
 
 ### fzf key mappings
 
@@ -202,6 +204,7 @@ brew install yamllint
 * [indentline](https://github.com/Yggdroot/indentLine)
 * [lightline](https://github.com/itchyny/lightline.vim)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
+* [tagbar](https://github.com/preservim/tagbar)
 * [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks)
 * [vim-commentary](https://github.com/tpope/vim-commentary)
 * [vimcompletesme](https://github.com/ajh17/VimCompletesMe)
@@ -210,6 +213,7 @@ brew install yamllint
 * [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags.git)
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-obsession](https://github.com/tpope/vim-obsession)
+* [vim-oscyank](https://github.com/ojroques/vim-oscyank)
 * [vim-rails](https://github.com/tpope/vim-rails)
 * [vim-rhubarb](https://github.com/tpope/vim-rhubarb)
 * [vim-ripgrep](https://github.com/jremmen/vim-ripgrep)
