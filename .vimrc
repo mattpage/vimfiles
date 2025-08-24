@@ -1,3 +1,17 @@
+" Always disable old vi compatibility
+set nocompatible
+
+" make sure homebrew binaries are in the PATH if they exist
+if isdirectory('/opt/homebrew/bin') && $PATH !~# '/opt/homebrew/bin'
+    let $PATH = '/opt/homebrew/bin:' . $PATH
+endif
+
+" Disable concealment globally
+set conceallevel=0       " Never hide characters
+set concealcursor=       " Cursor won’t reveal hidden characters
+
+" ============================================================================
+
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
@@ -40,10 +54,7 @@ endif
 
 call plug#end()
 
-" make sure homebrew binaries are in the PATH if they exist
-if isdirectory('/opt/homebrew/bin') && $PATH !~# '/opt/homebrew/bin'
-    let $PATH = '/opt/homebrew/bin:' . $PATH
-endif
+" ============================================================================
 
 " turn on syntax highlighting
 syntax enable
@@ -53,7 +64,7 @@ set termguicolors
 colorscheme solarized8_high
 set background=dark
 
-augroup SetSolarizedColorSchema
+augroup SetSolarizedColorScheme
   autocmd!
   autocmd vimenter * ++nested colorscheme solarized8_high
 augroup END
@@ -146,7 +157,6 @@ set modelines=10
 " Enable indent folding
 set foldenable
 set fdm=indent
-set nofoldenable
 set foldnestmax=10
 set foldlevel=1
 
@@ -404,9 +414,8 @@ vnoremap yy :OSCYankVisual<CR>
 nnoremap <leader>cp :let @" = expand("%")<cr>:OSCYankRegister "<CR>
 
 if has('nvim')
-" ==============================
-" Lua configuration for nvim-treesitter
-" ==============================
+" --- Lua configuration for nvim-treesitter ---
+
 lua << EOF
 require('nvim-treesitter.configs').setup {
   ensure_installed = { "ruby", "go", "javascript", "c" },
@@ -472,5 +481,4 @@ vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 99
 
 EOF
-" ==============================
 endif
