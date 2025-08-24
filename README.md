@@ -222,11 +222,11 @@ brew install yamllint
 ### JSON commands
 
 ```shell
-:PrettyPrintJSON  Prettify JSON
-:PrettyJSON       Alias to above
-:PrettyJson       Alias to above
-:FormatJSON       Alias to above
-:FormatJson       Alias to above
+':PrettyPrintJSON'  Prettify JSON
+':PrettyJSON'       Alias to above
+':PrettyJson'       Alias to above
+':FormatJSON'       Alias to above
+':FormatJson'       Alias to above
 ```
 
 ### Treesitter mappings
