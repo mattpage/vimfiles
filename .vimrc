@@ -27,6 +27,17 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-rhubarb'
+
+if has('nvim')
+  function! UpdateTreesitter()
+    if exists(':TSUpdate')
+      TSUpdate
+    endif
+  endfunction
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': function('UpdateTreesitter')}
+  Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+endif
+
 call plug#end()
 
 " make sure homebrew binaries are in the PATH if they exist
@@ -99,14 +110,14 @@ set backspace=indent,eol,start
 " Do not display whitespace (list/nolist)
 set nolist
 
-" --- Search related ---
+" Search related
 set hlsearch   " highlight search matches
 set incsearch  " enable incremental searching
 set ignorecase " searching is not case sensitive
 set smartcase  " When 'ignorecase' and 'smartcase' are both on, if a pattern contains an uppercase letter, it is case sensitive, otherwise, it is not.
 set gdefault   " search globally by default
 
-" --- command line completion ----
+" command line completion
 " Pressing Tab (repeatedly) will autocomplete in command mode
 set wildmenu
 set wildmode=list:longest,list:full
@@ -165,13 +176,13 @@ endfunction
 nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 nnoremap <Leader>rtw :call TrimWhiteSpace()<CR>
 
+" When vimrc is edited, reload it
 augroup ReloadVimrcAfterEdit
   autocmd!
-
-  " When vimrc is edited, reload it
   autocmd bufwritepost .vimrc source ~/.vimrc
 augroup END
 
+" yaml stuff
 augroup SetYamlIndent
   autocmd!
 
@@ -350,6 +361,8 @@ noremap <leader>tt :TagbarToggle<CR>
 " --- indentline ---
 let g:indentLine_char = '⦙'
 let g:indentLine_fileTypeExclude = ['json']
+" Prevent indentLine from forcing conceal
+let g:indentLine_setConceal = 0
 
 " --- CamelCaseMotion ---
 let g:camelcasemotion_key = '<leader>'
@@ -389,3 +402,75 @@ vnoremap yy :OSCYankVisual<CR>
 
 " --- copy file path of current buffer to clipboard ---
 nnoremap <leader>cp :let @" = expand("%")<cr>:OSCYankRegister "<CR>
+
+if has('nvim')
+" ==============================
+" Lua configuration for nvim-treesitter
+" ==============================
+lua << EOF
+require('nvim-treesitter.configs').setup {
+  ensure_installed = { "ruby", "go", "javascript", "c" },
+  auto_install = true,
+
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+    disable = { "markdown" },
+  },
+
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      node_decremental = "grm",
+      scope_incremental = "grc",
+    },
+  },
+
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true, -- record movements in the jump list
+      goto_next_start = {
+        ["]m"] = "@function.outer",
+        ["]]"] = "@class.outer",
+      },
+      goto_next_end = {
+        ["]M"] = "@function.outer",
+        ["]["] = "@class.outer",
+      },
+      goto_previous_start = {
+        ["[m"] = "@function.outer",
+        ["[["] = "@class.outer",
+      },
+      goto_previous_end = {
+        ["[M"] = "@function.outer",
+        ["[]"] = "@class.outer",
+      },
+    },
+  },
+
+  fold = {
+    enable = true,
+  },
+}
+
+-- Use Treesitter folds
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevel = 99
+
+EOF
+" ==============================
+endif

@@ -229,6 +229,37 @@ brew install yamllint
 :FormatJson       Alias to above
 ```
 
+### Treesitter mappings
+```shell
+# Motions
+']m'	next function start
+'[m'	previous function start
+']M'	next function end
+'[M'	previous function end
+']]'	next class/module start (class in Ruby, type/interface in Go, class in JS, struct in C)
+'[['	previous class/module start
+']['	next class/module end
+'[]'	previous class/module end
+
+# Text Objects
+'vaf'	around function
+'vif'	inside function
+'vac'	around class/module (Ruby: class/module; Go: type; JS: class; C: struct/union)
+'vic'	inside class/module
+'vab'	around block ({ ... } or do/end in Ruby)
+'vib'	inside block
+'vap'	around parameter list
+'vip'	inside parameter list
+'vas'	around statement (if, for, return, etc.)
+'vis'	inside statement
+
+# Incremental Selection
+'gnn'	start Treesitter selection at cursor
+'grn'	expand to next node
+'grc'	expand to outer scope (function/class/module)
+'grm'	shrink selection
+```
+
 ## resources
 
 * [ale](https://github.com/w0rp/ale)
@@ -240,6 +271,8 @@ brew install yamllint
 * [indentline](https://github.com/Yggdroot/indentLine)
 * [lightline](https://github.com/itchyny/lightline.vim)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
+* [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+* [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 * [tagbar](https://github.com/preservim/tagbar)
 * [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks)
 * [vim-commentary](https://github.com/tpope/vim-commentary)
