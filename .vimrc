@@ -406,6 +406,31 @@ command! PrettyJson PrettyPrintJSON
 command! FormatJSON PrettyPrintJSON
 command! FormatJson PrettyPrintJSON
 
+" --- Find/Replace using ripgrep, cfdo, and a %s//c
+function! RgFindReplaceConfirm() abort
+  " Ask for find/replace in one prompt
+  let l:input = input('Find/Replace (foo/bar): ')
+  if empty(l:input) || stridx(l:input, '/') == -1
+    echo "Input must be in the form find/replace"
+    return
+  endif
+
+  " Split into find & replace parts
+  let [l:find, l:replace] = split(l:input, '/', 1)
+
+  " Populate quickfix with ripgrep results
+  execute 'Rg ' . l:find
+
+  " Open quickfix so we can review matches
+  copen
+
+  " Confirmed substitution on each file, save if changed
+  execute 'cfdo %s/' . escape(l:find, '/') . '/' . escape(l:replace, '/') . '/gc | update'
+endfunction
+
+" Map to <leader>fr for convenience
+nnoremap <leader>fr :call RgFindReplaceConfirm()<CR>
+
 " " --- yank text in visual mode using the ANSI OSC52 sequence ---
 vnoremap <leader>y :OSCYankVisual<CR>
 vnoremap yy :OSCYankVisual<CR>
