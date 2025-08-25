@@ -406,8 +406,8 @@ command! PrettyJson PrettyPrintJSON
 command! FormatJSON PrettyPrintJSON
 command! FormatJson PrettyPrintJSON
 
-" --- Find/Replace using ripgrep, cfdo, and a %s//c
-function! RgFindReplaceConfirm() abort
+" --- Find/Replace All
+function! RgFindReplaceAll() abort
   " Ask for find/replace in one prompt
   let l:input = input('Find/Replace (foo/bar): ')
   if empty(l:input) || stridx(l:input, '/') == -1
@@ -429,7 +429,7 @@ function! RgFindReplaceConfirm() abort
 endfunction
 
 " Map to <leader>fr for convenience
-nnoremap <leader>fr :call RgFindReplaceConfirm()<CR>
+nnoremap <leader>fr :call RgFindReplaceAll()<CR>
 
 " " --- yank text in visual mode using the ANSI OSC52 sequence ---
 vnoremap <leader>y :OSCYankVisual<CR>

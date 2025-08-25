@@ -211,6 +211,12 @@ foo|bar   Logical OR operator. Matches 'foo' or 'bar'
 ':RgRoot' show root search dir
 ```
 
+### find/replace all
+
+```bash
+'/fr'     Prompts for Find/Replace text then does a ripgrep search followed by 'cfdo %s/<find>/<replace>/gc | update'
+```
+
 ### bookmarks
 
 ```bash
