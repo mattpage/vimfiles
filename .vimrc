@@ -418,13 +418,22 @@ if has('nvim')
 
 lua << EOF
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "ruby", "go", "javascript", "c" },
+  ensure_installed = {
+    "bash",
+    "c",
+    "go",
+    "javascript",
+    "markdown",
+    "markdown_inline",
+    "ruby",
+  },
   auto_install = true,
 
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false,
-    disable = { "markdown" },
+    -- additional_vim_regex_highlighting = false,
+    -- disable = { "markdown" },
+    additional_vim_regex_highlighting = { 'markdown' },
   },
 
   incremental_selection = {

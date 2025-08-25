@@ -9,7 +9,7 @@
 
 use vim-plug for installing plugins and runtime files.
 
-```shell
+```bash
 mkdir -p ~/.vim/autoload ~/.vim/backup ~/.vim/bundle ~/.vim/colors
 cp -r ./vim/ ~/.vim/
 cp -r ./config/ ~/.config/
@@ -17,7 +17,7 @@ cp -r ./config/ ~/.config/
 
 ## install dotfiles
 
-```shell
+```bash
 cp .vimrc ~
 cp .ctags ~
 ```
@@ -30,14 +30,14 @@ Open nvim and run `:PlugInstall`
 fzf is a command-line fuzzy finder.
 It is a replacement for ctrl+p.
 
-```shell
+```bash
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
 use ripgrep for searching since it supports ignoring directories like 'node_modules'
 
-```shell
+```bash
 brew install ripgrep
 ```
 
@@ -45,7 +45,7 @@ or see ripgrep [installation](https://github.com/BurntSushi/ripgrep#installation
 
 then add the following to ~/.fzf.bash or ~/.fzf.zsh
 
-```shell
+```bash
 # set fzf source to ripgrep and ignore some dirs
 # see https://github.com/junegunn/fzf#respecting-gitignore
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,coverage}/*" 2> /dev/null'
@@ -53,7 +53,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 
 ## install ctags
 
-```shell
+```bash
 #macos
 brew install universal-ctags
 
@@ -65,7 +65,7 @@ sudo apt install universal-ctags
 
 To map capslock to ctrl, add this to .bashrc
 
-```shell
+```bash
 #linux
 setxkbmap -layout us -option ctrl:nocaps
 ```
@@ -74,14 +74,14 @@ setxkbmap -layout us -option ctrl:nocaps
 
 ### C/C++
 
-```shell
+```bash
 brew install cppcheck
 brew install clang-format
 ```
 
 ### go
 
-```shell
+```bash
 brew install go
 ```
 
@@ -92,7 +92,7 @@ In vim, type
 
 ### javascript
 
-```shell
+```bash
 npm install eslint --save-dev
 eslint --init
 npm install prettier-eslint --save-dev
@@ -103,13 +103,13 @@ For ruby linting, make sure rubocop is on your path.
 
 ### yaml
 
-```shell
+```bash
 brew install yamllint
 ```
 
 ## key mappings and commands
 
-```shell
+```bash
 'jj'      leave insert mode (same as esc)
 'v'       leave visual mode
 'esc+esc' no highlight
@@ -125,7 +125,7 @@ brew install yamllint
 
 ### a.vim
 
-```shell
+```bash
 '\o'    toggle between source and header file
 '\os'   toggle and open in a split
 '\ov'   toggle and open in a vertical split
@@ -134,7 +134,7 @@ brew install yamllint
 
 ### buffer and bufexplorer
 
-```shell
+```bash
 '\be'       open buffer explorer (normal)
 '\bs'       open buffer explorer (horiz split)
 '\bv'       open buffer explorer (vert split)
@@ -151,7 +151,7 @@ brew install yamllint
 
 ### window commands
 
-```shell
+```bash
 'Ctrl-W H'          Moves the cursor to the left window
 'Ctrl-W J'          Moves the cursor to the window below
 'Ctrl-W K'          Moves the cursor to the window upper
@@ -171,19 +171,19 @@ brew install yamllint
 
 ### nerdtree
 
-```shell
+```bash
 '\n'      toggle nerdtree
 ```
 
 ### tagbar
 
-```shell
+```bash
 '\tt' Toggle Tagbar
 ```
 
 ### fzf
 
-```shell
+```bash
 '\fb'     fuzzy find buffers
 '\fc'     fuzzy find git commits
 '\ff'     fuzzy find files
@@ -193,14 +193,14 @@ brew install yamllint
 
 ### ripgrep
 
-```shell
+```bash
 ':Rg'     <string|pattern>
 ':RgRoot' show root search dir
 ```
 
 ### bookmarks
 
-```shell
+```bash
 'mm'   Add/remove bookmark at current line
 'mi'   Add/edit/remove annotation at current line
 'mn'   Jump to next bookmark in buffer
@@ -212,7 +212,7 @@ brew install yamllint
 
 ### session commands
 
-```shell
+```bash
 '\ss'  Start a session
 '\sr'  Restore a session
 '\sp'  Pause a session
@@ -221,7 +221,7 @@ brew install yamllint
 
 ### JSON commands
 
-```shell
+```bash
 ':PrettyPrintJSON'  Prettify JSON
 ':PrettyJSON'       Alias to above
 ':PrettyJson'       Alias to above
@@ -230,7 +230,7 @@ brew install yamllint
 ```
 
 ### Treesitter mappings
-```shell
+```bash
 # Motions
 ']m'	next function start
 '[m'	previous function start
