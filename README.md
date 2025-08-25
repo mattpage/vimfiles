@@ -191,6 +191,19 @@ brew install yamllint
 '\ft'     fuzzy find tags
 ```
 
+```
+# fzf search syntax
+foo       Fuzzy match (default)
+^foo      Starts with 'foo'
+bar$      Ends with 'bar'
+'baz      Must Include the term 'baz'
+'baz'     Matches 'baz' at word boundary
+foo|bar   Logical OR operator. Matches 'foo' or 'bar'
+!baz      Inverse exact match. Items that do not include 'baz'
+!^foo     Inverse starts with. Items that do not start with 'foo'
+!bar$     Inverse ends with. Items that do not end with 'bar'
+```
+
 ### ripgrep
 
 ```bash
