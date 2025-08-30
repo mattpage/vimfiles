@@ -238,6 +238,14 @@ foo|bar   Logical OR operator. Matches 'foo' or 'bar'
 '\sx'  Destroy a session
 ```
 
+### snipmate commands
+
+```bash
+'\vv'  Insert
+'\vb'  Back
+'\vs'  Show available snippets based on previous text
+```
+
 ### JSON commands
 
 ```bash
@@ -305,4 +313,5 @@ foo|bar   Logical OR operator. Matches 'foo' or 'bar'
 * [vim-rails](https://github.com/tpope/vim-rails)
 * [vim-rhubarb](https://github.com/tpope/vim-rhubarb)
 * [vim-ripgrep](https://github.com/jremmen/vim-ripgrep)
+* [vim-snipmate](https://github.com/garbas/vim-snipmate)
 * [vim-solarized8](https://github.com/lifepillar/vim-solarized8)

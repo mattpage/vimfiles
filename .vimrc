@@ -42,6 +42,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-rhubarb'
 
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+
 if has('nvim')
   function! UpdateTreesitter()
     if exists(':TSUpdate')
@@ -395,6 +399,22 @@ nnoremap <Leader>sp :Obsession<CR>
 
 " destroy session
 nnoremap <Leader>sx :Obsession!<CR>
+
+" -- vim-snipmate --
+" Based on these settings that work with YouCompleteMe:
+" https://github.com/ycm-core/YouCompleteMe/issues/47#issuecomment-363369730
+
+imap <expr> <Leader>vv pumvisible() ? '<esc>a<Plug>snipMateNextOrTrigger' : '<Plug>snipMateNextOrTrigger'
+smap <Leader>vv <Plug>snipMateNextOrTrigger
+
+" Jump Backward
+imap <expr> <Leader>vb pumvisible() ? '<esc>a<Plug>snipMateBack' : '<Plug>snipMateBack'
+smap <Leader>vb <Plug>snipMateBack
+
+" Show snippet Menu
+imap <expr> <Leader>vs pumvisible() ? '<esc>a<Plug>snipMateShow' : '<Plug>snipMateShow'
+smap <Leader>vs <Plug>snipMateShow
+
 
 "--- enable matchit macro for do...end and various others ---
 runtime macros/matchit.vim
