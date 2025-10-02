@@ -149,6 +149,15 @@ brew install yamllint
 ':buf + n'  where n is the buffer number
 ```
 
+### camelCaseMotion
+
+```bash
+'\w'        move forward an inner-word
+'\b'        move back an inner-word
+'\e'        move to the end of the next inner-word
+'\ge'       move back to the end of the previous inner-word
+```
+
 ### window commands
 
 ```bash
