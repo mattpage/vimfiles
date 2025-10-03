@@ -5,7 +5,9 @@
 * neovim
 * Homebrew or Linuxbrew
 
-## install vim-plug
+## installation
+
+### install vim-plug
 
 use vim-plug for installing plugins and runtime files.
 
@@ -15,17 +17,17 @@ cp -r ./vim/ ~/.vim/
 cp -r ./config/ ~/.config/
 ```
 
-## install dotfiles
+### install dotfiles
 
 ```bash
 cp .vimrc ~
 cp .ctags ~
 ```
 
-## install vim plugins
+### install vim plugins
 Open nvim and run `:PlugInstall`
 
-## install fzf and ripgrep
+### install fzf and ripgrep
 
 fzf is a command-line fuzzy finder.
 It is a replacement for ctrl+p.
@@ -51,7 +53,7 @@ then add the following to ~/.fzf.bash or ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,coverage}/*" 2> /dev/null'
 ```
 
-## install ctags
+### install ctags
 
 ```bash
 #macos
@@ -61,7 +63,7 @@ brew install universal-ctags
 sudo apt install universal-ctags
 ```
 
-## remap capslock
+### remap capslock
 
 To map capslock to ctrl, add this to .bashrc
 
@@ -132,6 +134,18 @@ brew install yamllint
 '\ot'   toggle and open in a tab
 ```
 
+### bookmarks
+
+```bash
+'mm'   Add/remove bookmark at current line
+'mi'   Add/edit/remove annotation at current line
+'mn'   Jump to next bookmark in buffer
+'mp'   Jump to previous bookmark in buffer
+'ma'   Show all bookmarks (toggle)
+'mc'   Clear bookmarks in current buffer only
+'mx'   Clear bookmarks in all buffers
+```
+
 ### buffer and bufexplorer
 
 ```bash
@@ -158,36 +172,10 @@ brew install yamllint
 '\ge'       move back to the end of the previous inner-word
 ```
 
-### window commands
+### find/replace all
 
 ```bash
-'Ctrl-W H'          Moves the cursor to the left window
-'Ctrl-W J'          Moves the cursor to the window below
-'Ctrl-W K'          Moves the cursor to the window upper
-'Ctrl-W L'          Moves the cursor to the right window
-'Ctrl-W V'          Opens a new vertical split
-'Ctrl-W S'          Opens a new horizontal split
-'Ctrl-W C'          Closes a window
-'Ctrl-W O'          Makes the current window the only one on screen and closes other windows
-'Ctrl-W V'          Opens a new vertical split
-'Ctrl-W S'          Opens a new horizontal split
-'Ctrl-W C'          Closes a window
-'Ctrl-W O'          Makes the current window the only one on screen and closes other windows
-':vsplit filename'  Split window vertically
-':split filename'   Split window horizontally
-':new filename'     Create new window
-```
-
-### nerdtree
-
-```bash
-'\n'      toggle nerdtree
-```
-
-### tagbar
-
-```bash
-'\tt' Toggle Tagbar
+'/fr'     Prompts for Find/Replace text then does a ripgrep search followed by 'cfdo %s/<find>/<replace>/gc | update'
 ```
 
 ### fzf
@@ -200,8 +188,9 @@ brew install yamllint
 '\ft'     fuzzy find tags
 ```
 
+#### fzf search syntax
+
 ```
-# fzf search syntax
 foo       Fuzzy match (default)
 ^foo      Starts with 'foo'
 bar$      Ends with 'bar'
@@ -213,29 +202,34 @@ foo|bar   Logical OR operator. Matches 'foo' or 'bar'
 !bar$     Inverse ends with. Items that do not end with 'bar'
 ```
 
+### JSON commands
+
+```bash
+':PrettyPrintJSON'  Prettify JSON
+':PrettyJSON'       Alias to above
+':PrettyJson'       Alias to above
+':FormatJSON'       Alias to above
+':FormatJson'       Alias to above
+```
+
+### nerdtree
+
+```bash
+'\n'      toggle nerdtree
+```
+
+### registers
+
+```bash
+'"0p'   Paste what was last yanked from the yank register
+'"1-9p' Paste what was last changed or deleted from most recent 1 to oldest 9
+```
+
 ### ripgrep
 
 ```bash
 ':Rg'     <string|pattern>
 ':RgRoot' show root search dir
-```
-
-### find/replace all
-
-```bash
-'/fr'     Prompts for Find/Replace text then does a ripgrep search followed by 'cfdo %s/<find>/<replace>/gc | update'
-```
-
-### bookmarks
-
-```bash
-'mm'   Add/remove bookmark at current line
-'mi'   Add/edit/remove annotation at current line
-'mn'   Jump to next bookmark in buffer
-'mp'   Jump to previous bookmark in buffer
-'ma'   Show all bookmarks (toggle)
-'mc'   Clear bookmarks in current buffer only
-'mx'   Clear bookmarks in all buffers
 ```
 
 ### session commands
@@ -255,14 +249,10 @@ foo|bar   Logical OR operator. Matches 'foo' or 'bar'
 '\vs'  Show available snippets based on previous text
 ```
 
-### JSON commands
+### tagbar
 
 ```bash
-':PrettyPrintJSON'  Prettify JSON
-':PrettyJSON'       Alias to above
-':PrettyJson'       Alias to above
-':FormatJSON'       Alias to above
-':FormatJson'       Alias to above
+'\tt' Toggle Tagbar
 ```
 
 ### Treesitter mappings
@@ -294,6 +284,26 @@ foo|bar   Logical OR operator. Matches 'foo' or 'bar'
 'grn'	expand to next node
 'grc'	expand to outer scope (function/class/module)
 'grm'	shrink selection
+```
+
+### window commands
+
+```bash
+'Ctrl-W H'          Moves the cursor to the left window
+'Ctrl-W J'          Moves the cursor to the window below
+'Ctrl-W K'          Moves the cursor to the window upper
+'Ctrl-W L'          Moves the cursor to the right window
+'Ctrl-W V'          Opens a new vertical split
+'Ctrl-W S'          Opens a new horizontal split
+'Ctrl-W C'          Closes a window
+'Ctrl-W O'          Makes the current window the only one on screen and closes other windows
+'Ctrl-W V'          Opens a new vertical split
+'Ctrl-W S'          Opens a new horizontal split
+'Ctrl-W C'          Closes a window
+'Ctrl-W O'          Makes the current window the only one on screen and closes other windows
+':vsplit filename'  Split window vertically
+':split filename'   Split window horizontally
+':new filename'     Create new window
 ```
 
 ## resources
