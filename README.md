@@ -286,6 +286,15 @@ foo|bar   Logical OR operator. Matches 'foo' or 'bar'
 'grm'	shrink selection
 ```
 
+### vim-fugitive
+
+Use `:Git` or `:G` followed by any git command.
+Examples:
+- `:Git status`
+- `:Git pull`
+- `:Git log --oneline`
+- `:Git diff`
+
 ### window commands
 
 ```bash
