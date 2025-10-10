@@ -392,6 +392,7 @@ Session commands
 * [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks)
 * [vim-commentary](https://github.com/tpope/vim-commentary)
 * [vimcompletesme](https://github.com/ajh17/VimCompletesMe)
+* [vim-endwise](https://github.com/tpope/vim-endwise)
 * [vim-fugitive](https://github.com/tpope/vim-fugitive)
 * [vim-go](https://github.com/fatih/vim-go)
 * [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags.git)
