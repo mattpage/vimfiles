@@ -232,15 +232,6 @@ foo|bar   Logical OR operator. Matches 'foo' or 'bar'
 ':RgRoot' show root search dir
 ```
 
-### session commands
-
-```bash
-'\ss'  Start a session
-'\sr'  Restore a session
-'\sp'  Pause a session
-'\sx'  Destroy a session
-```
-
 ### snipmate commands
 
 ```bash
@@ -286,14 +277,83 @@ foo|bar   Logical OR operator. Matches 'foo' or 'bar'
 'grm'	shrink selection
 ```
 
+### vim-commentary
+
+Comment and uncomment this or that
+
+```bash
+'gcc' to comment out a line
+'5gcc' comment 5 lines
+'gc{motiion}'
+```
+
 ### vim-fugitive
 
-Use `:Git` or `:G` followed by any git command.
-Examples:
-- `:Git status`
-- `:Git pull`
-- `:Git log --oneline`
-- `:Git diff`
+Use `:Git` or `:G` followed by any git command
+
+```bash
+':Git status'
+':Git pull'
+':Git log --oneline'
+':Git diff'
+':GBrowse' open a web page for the current file at your git host (github, gitlab, etc)
+```
+
+### vim-go
+
+Go development
+
+```bash
+
+# navigation
+':GoAlternate'  switch between file.go and file_test.go
+':GoDef'        goto symbol/declaration
+':GoDefType'    goto type definition for the identifier under the cursor
+
+# build, run, debug
+':GoBuild'      build it
+':GoRun'        run it
+':GoDebugStart' debug it w/ Delve
+
+# code quality
+':GoCoverage'   generate coverage for the current file
+':GoErrCheck'   check for unchecked errors in the current package
+':GoFmt'        format the current buffer
+':GoLint'       lint the current file directory
+':GoTest'       test it
+':GoTestFile'   test the current file
+':GoTestFunc'   test a single func
+':GoVet'        vet the current file directory
+
+# meta
+':GoDeps'       show dependencies for the current package
+':GoDoc'        lookup documentation
+':GoFiles'      show source files for the current package
+':GoInfo'       info about the identifier under the cursor
+```
+
+### vim-obsession
+
+Session commands
+
+```bash
+'\ss'  Start a session
+'\sr'  Restore a session
+'\sp'  Pause a session
+'\sx'  Destroy a session
+```
+
+### vim-rails
+
+```bash
+`gf`    Enhanced version of goto file
+`:A`    Jump to the "alternate" file
+`:AS`   Jump to the alternate in a split
+`:AV`   Jump to the alternate in a vertical split
+`:R`    Jump to the "related" file
+`:RS`   Jump to the "related" file in a split
+`:RV`   Jump to the "related" file in a split
+```
 
 ### window commands
 
