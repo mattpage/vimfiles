@@ -355,6 +355,19 @@ Session commands
 `:RV`   Jump to the "related" file in a split
 ```
 
+### vim-surround
+
+```bash
+#add
+`ys{motion}{char}`  Add a surrounding {char} to {motion}, e.g., `ysw[`
+
+#delete
+`ds{char}`          Delete a surrounding {char}, e.g., `ds(`
+
+#change
+`cs{char}{char}`    Change a surrounding {char} to {char}, e.g., `cs([`
+```
+
 ### window commands
 
 ```bash
@@ -403,4 +416,5 @@ Session commands
 * [vim-rhubarb](https://github.com/tpope/vim-rhubarb)
 * [vim-ripgrep](https://github.com/jremmen/vim-ripgrep)
 * [vim-snipmate](https://github.com/garbas/vim-snipmate)
+* [vim-surround](https://github.com/tpope/vim-surround)
 * [vim-solarized8](https://github.com/lifepillar/vim-solarized8)
