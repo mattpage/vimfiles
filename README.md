@@ -343,6 +343,11 @@ Session commands
 '\sx'  Destroy a session
 ```
 
+### vim-peekaboo
+
+Extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers in a sidebar.
+This is similar to tagbar but for displaying the contents of the registers.
+
 ### vim-rails
 
 ```bash
@@ -413,6 +418,7 @@ Session commands
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-obsession](https://github.com/tpope/vim-obsession)
 * [vim-oscyank](https://github.com/ojroques/vim-oscyank)
+* [vim-peekaboo](https://github.com/junegunn/vim-peekaboo)
 * [vim-rails](https://github.com/tpope/vim-rails)
 * [vim-rhubarb](https://github.com/tpope/vim-rhubarb)
 * [vim-ripgrep](https://github.com/jremmen/vim-ripgrep)
