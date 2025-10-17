@@ -101,14 +101,36 @@ filetype plugin indent on
 " Set file encoding
 set encoding=utf-8
 
-" allow clipboard across platforms
-set clipboard^=unnamed,unnamedplus
-
 " Show line numbers
 set number
 
 "  add a line / column display in the bottom right-hand section of the screen.
 set ruler
+
+" --- Clipboard stuff ---
+set clipboard^=unnamed,unnamedplus
+
+" Safe defaults
+" Normal deletions/changes go to black hole, not clipboard
+nnoremap d "_d
+nnoremap D "_D
+nnoremap c "_c
+nnoremap C "_C
+
+" Small deletions go to local numbered register ("1")
+nnoremap x "1x
+nnoremap s "1s
+
+" Safe pasting in visual mode
+" 'p' in visual mode won't clobber the clipboard.
+vnoremap p "_c<C-r><C-o>+
+
+" Explicit clipboard operations
+" Use <leader>y/d/p when you *want* to affect the clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>d "+d
+nnoremap <leader>p "+p
 
 " --- Whitespace stuff ---
 set nowrap
