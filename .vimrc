@@ -265,6 +265,10 @@ nnoremap <silent> <Leader>os :AS<CR>
 nnoremap <silent> <Leader>ov :AV<CR>
 nnoremap <silent> <Leader>ot :AT<CR>
 
+" tell vim not to auto resize splits
+:set noequalalways
+:set winfixwidth
+
 let g:alternateSearchPath = 'src,include'
 
 " --- ALE ---
