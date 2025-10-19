@@ -53,6 +53,17 @@ then add the following to ~/.fzf.bash or ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,coverage}/*" 2> /dev/null'
 ```
 
+If you want to be able to search for devdocs using fzf:
+
+```bash
+mkdir ~/.local/share/devdocs
+chmod +x update-devdocs.sh
+cp update-devdocs.sh ~/.local/share/devdocs/
+```
+
+You can then generate an index by either running that script or using `:DevDocsUpdate` in vim.
+You can change the type of docs indexed by editing the script.
+
 ### install ctags
 
 ```bash
@@ -200,6 +211,13 @@ foo|bar   Logical OR operator. Matches 'foo' or 'bar'
 !baz      Inverse exact match. Items that do not include 'baz'
 !^foo     Inverse starts with. Items that do not start with 'foo'
 !bar$     Inverse ends with. Items that do not end with 'bar'
+```
+
+#### fzf devdocs support
+
+```bash
+'\fd'               fuzzy find devdoc and open in browser
+':DevDocsUpdate'    generate a devdocs index
 ```
 
 ### JSON commands

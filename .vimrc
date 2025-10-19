@@ -336,9 +336,10 @@ nnoremap <Leader>fl :Lines<CR>
 " map leader+ft to fuzzy find tags
 nnoremap <Leader>ft :Tags<CR>
 
-" map leader+fd to fuzzy find devdocs
-" you have to build the index first with the update-devdocs shell script
-function! s:open_devdocs_url(lines)
+"--- FZF devdocs support ---
+
+" open devdocs in browser
+function! s:OpenDevDocsUrl(lines)
   if empty(a:lines)
     return
   endif
@@ -352,20 +353,32 @@ function! s:open_devdocs_url(lines)
   endif
 endfunction
 
+" Base directory for DevDocs data
+let g:devdocs_data_dir = expand('~/.local/share/devdocs')
+
 function! DevDocsFzf()
-  let index = expand('~/.local/devdocs_index.txt')
+  let index = g:devdocs_data_dir . '/devdocs_index.txt'
   if !filereadable(index)
-    echoerr "DevDocs index not found. Run update-devdocs.sh first."
+    echoerr "DevDocs index not found. Run :DevDocsUpdate first."
     return
   endif
+
+  " Handler function
+  let l:Handler = function('s:OpenDevDocsUrl')
+
   call fzf#run(fzf#wrap({
         \ 'source': 'cat ' . shellescape(index),
-        \ 'sink*': function('s:open_devdocs_url'),
+        \ 'sink*': l:Handler,
         \ 'options': ['--delimiter', '\t', '--with-nth=1', '--prompt', 'DevDocs> '],
         \ }))
 endfunction
 
+" Fuzzy search mapping
 nnoremap <leader>fd :call DevDocsFzf()<CR>
+
+" Update command (run local update script)
+command! DevDocsUpdate execute '!bash ' . shellescape(g:devdocs_data_dir . '/update-devdocs.sh')
+
 
 "--- vim-commentary ---
 nmap <leader>c gc<CR>
