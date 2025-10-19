@@ -336,6 +336,37 @@ nnoremap <Leader>fl :Lines<CR>
 " map leader+ft to fuzzy find tags
 nnoremap <Leader>ft :Tags<CR>
 
+" map leader+fd to fuzzy find devdocs
+" you have to build the index first with the update-devdocs shell script
+function! s:open_devdocs_url(lines)
+  if empty(a:lines)
+    return
+  endif
+  let url = split(a:lines[0], '\t')[-1]
+  if executable('open')
+    call system('open ' . shellescape(url) . ' &')
+  elseif executable('xdg-open')
+    call system('xdg-open ' . shellescape(url) . ' &')
+  else
+    echo 'Open this manually: ' . url
+  endif
+endfunction
+
+function! DevDocsFzf()
+  let index = expand('~/.local/devdocs_index.txt')
+  if !filereadable(index)
+    echoerr "DevDocs index not found. Run update-devdocs.sh first."
+    return
+  endif
+  call fzf#run(fzf#wrap({
+        \ 'source': 'cat ' . shellescape(index),
+        \ 'sink*': function('s:open_devdocs_url'),
+        \ 'options': ['--delimiter', '\t', '--with-nth=1', '--prompt', 'DevDocs> '],
+        \ }))
+endfunction
+
+nnoremap <leader>fd :call DevDocsFzf()<CR>
+
 "--- vim-commentary ---
 nmap <leader>c gc<CR>
 
