@@ -134,6 +134,9 @@ brew install yamllint
 '\cp'     copy the file path of the current buffer to the clipboard
 ']q'      next item in quickfix
 '[q'      prev item in quickfix
+'\y'      yank to system clipboard
+'\p'      paste from system clipboard
+'\d'      delete to system clipboard
 ```
 
 ### a.vim
