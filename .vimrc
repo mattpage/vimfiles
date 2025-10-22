@@ -112,10 +112,71 @@ set clipboard=
 
 " Explicit clipboard operations
 " Use <leader>y/d/p to interact with the clipboard
-nnoremap <leader>y "+y
-vnoremap <leader>y "+y
-nnoremap <leader>d "+d
-nnoremap <leader>p "+p
+
+" --- Clipboard setup ---
+
+if exists('$SSH_CONNECTION') || exists('$SSH_CLIENT') || exists('$SSH_TTY')
+  " remote (SSH) clipboard setup using vim-oscyank and OSC52
+
+  " Copy visually selected text to *local* clipboard using OSC52
+  vnoremap <leader>y :OSCYankVisual<CR>
+
+  " Copy text (via a motion, e.g. `<leader>yw`, `<leader>yi"`) to *local* clipboard
+  " This captures motion-based yanks through OSC52
+  nnoremap <leader>y :set opfunc=OSCYankOperator<CR>g@
+
+  " Copy current line to *local* clipboard using OSC52
+  nnoremap <leader>yy :OSCYankVisual<CR>
+
+  " Yank All - copy the entire buffer to clipboard / OSC52
+  nnoremap <leader>ya ggVG:OSCYankVisual<CR>
+
+  " Delete text silently (don’t overwrite any registers)
+  " This prevents broken clipboard behavior on remote machines
+  nnoremap <leader>d "_d
+
+  " Paste from unnamed register (the last yanked/deleted text)
+  " Works consistently even when no system clipboard is available
+  nnoremap <leader>p :normal! p<CR>
+
+  " Paste before cursor from unnamed register
+  nnoremap <leader>P :normal! P<CR>
+
+  " Copy the current file’s relative path to the *local* clipboard using OSC52
+  nnoremap <leader>cp :let @" = expand("%")<cr>:OSCYankRegister "<CR>
+
+  " Copy the current file’s absolute path to the *local* clipboard using OSC52
+  nnoremap <leader>cP :let @" = expand("%:p")<cr>:OSCYankRegister "<CR>
+else
+  " local clipboard setup
+
+  " Copy visually selected text to system clipboard
+  vnoremap <leader>y "+y
+
+  " Copy text (via a motion, e.g. `<leader>yw`, `<leader>yi"`) to system clipboard
+  nnoremap <leader>y "+y
+
+  " Copy current line to system clipboard
+  nnoremap <leader>yy "+yy
+
+  " Yank All - copy the entire buffer to clipboard
+  nnoremap <leader>ya ggVG"+y
+
+  " Delete text and send it to the system clipboard (cut)
+  nnoremap <leader>d "+d
+
+  " Paste from system clipboard
+  nnoremap <leader>p "+p
+
+  " Paste before Cursor from clipboard
+  nnoremap <leader>P "+P
+
+  " Copy current file’s relative path to system clipboard
+  nnoremap <leader>cp :let @+ = expand("%")<CR>
+
+  " Copy current file’s absolute path to system clipboard
+  nnoremap <leader>cP :let @+ = expand("%:p")<CR>
+endif
 
 " mimic easy-clip
 "set clipboard^=unnamed,unnamedplus
@@ -527,13 +588,6 @@ endfunction
 
 " Map to <leader>fr for convenience
 nnoremap <leader>fr :call RgFindReplaceAll()<CR>
-
-" " --- yank text in visual mode using the ANSI OSC52 sequence ---
-vnoremap <leader>y :OSCYankVisual<CR>
-vnoremap yy :OSCYankVisual<CR>
-
-" --- copy file path of current buffer to clipboard ---
-nnoremap <leader>cp :let @" = expand("%")<cr>:OSCYankRegister "<CR>
 
 if has('nvim')
 " --- Lua configuration for nvim-treesitter ---
